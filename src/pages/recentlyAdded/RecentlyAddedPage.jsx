@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './RecentlyAddedPage.scss?inline'
+import style from './RecentlyAddedPage.module.scss?inline'
 
 const RecentlyAddedPage = () => {
 	return (
