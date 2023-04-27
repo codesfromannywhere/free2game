@@ -1,20 +1,25 @@
+@import "../../data/vars";
+
 .genericLink {
-	background: transparent;
+	color: $link_normal_foreground_color;
+	background: $link_normal_background_color;
+	text-decoration: none;
 
 	outline: 2px solid transparent;
 
-	border: 2px solid rgba(255, 255, 255, 0.1);
+	border: 2px solid $link_normal_border_color;
 	border-radius: 8px;
 
 	transition-duration: 200ms;
 	transition-property: outline-color, background-color;
 
 	&:hover {
-		background: rgba(255, 255, 255, 0.1);
-		outline: 2px solid rgb(75, 75, 150);
+		color: $link_hovered_foreground_color;
+		background: $link_hovered_background_color;
+		outline: 2px solid $link_hovered_outline_color;
 	}
 
 	&:active {
-		background: rgba(255, 255, 255, 0.2);
+		background: $link_active_background_color;
 	}
 }

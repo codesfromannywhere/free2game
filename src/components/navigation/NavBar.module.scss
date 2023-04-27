@@ -1,3 +1,5 @@
+@import "../../data/vars";
+
 .navBar {
 	position: fixed;
 	left: 0;
@@ -8,7 +10,8 @@
 	flex-direction: column;
 
 	border-right: 2px solid rgb(70, 70, 70);
-	background: rgba(0, 0, 0, 0.75);
+	background: $paper_background_color;
+	color: $paper_foreground_color;
 
 	backdrop-filter: blur(4px);
 
