@@ -7,14 +7,12 @@ import GameDetailsPage from "./pages/GameDetailsPage/GameDetailsPage.jsx";
 
 const App = () => {
   return (
-    <div className="App">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/all-games" element={<AllGamesPage />} />
         <Route path="/recently-added" element={<RecentlyAddedPage />} />
         <Route path="/game/:name" element={<GameDetailsPage />} />
       </Routes>
-    </div>
   );
 };
 

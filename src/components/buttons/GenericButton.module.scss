@@ -1,0 +1,16 @@
+.genericButton {
+	outline: 2px solid transparent;
+
+	border: 2px solid rgba(255, 255, 255, 0.1);
+	border-radius: 8px;
+
+	transition: outline 200ms;
+
+	&:hover {
+		outline: 2px solid rgb(75, 75, 150);
+	}
+
+	&:active {
+		background: rgba(255, 255, 255, 0.1);
+	}
+}
