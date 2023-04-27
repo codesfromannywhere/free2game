@@ -4,7 +4,22 @@
 	top: 0;
 	bottom: 0;
 
-	width: 15px;
 
-	background: blue;
+
+	border-right: 2px solid rgb(70, 70, 70);
+	background: rgba(255, 255, 0, 1);
+
+	button {
+		aspect-ratio: 1 / 1;
+		height: auto;
+		width: 50px;
+
+		padding: 0;
+		margin: 4px;
+		img {
+			aspect-ratio: 1/1;
+			width: 100%;
+			filter: invert(100%);
+		}
+	}
 }

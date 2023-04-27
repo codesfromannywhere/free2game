@@ -8,7 +8,8 @@ const Layout = ({children}) => {
 		<div className={style.layout}>
 			<NavBar/>
 			<header>
-
+				<h1>FREE2GAME</h1>
+				<input type="text"/>
 			</header>
 			<main>
 				{children}
