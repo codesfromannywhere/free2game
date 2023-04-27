@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './RecentlyAddedPage.module.scss';
 import { useState, useEffect } from 'react';
-// import RecentlyAddedList from '../../components/recentlyAddedComps/RecentlyAddedList';
+// import RecentlyAddedList from '../../components/recentlyAdded/RecentlyAddedList';
 
 const RecentlyAddedPage = () => {
 
