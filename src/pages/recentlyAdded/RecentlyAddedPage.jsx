@@ -19,7 +19,6 @@ const RecentlyAddedPage = () => {
 
 	return (
 		<main className={style.recentlyAddedPage}>
-			RecentlyAddedPage
 			{recentlyAdded.map((game) => (
 				<RecentListItem
 					key={game.id}
@@ -29,7 +28,6 @@ const RecentlyAddedPage = () => {
 					genre={game.genre}
 				/>
 			))}
-
 		</main>
 	);
 };
