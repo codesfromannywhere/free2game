@@ -1,32 +1,30 @@
 import { useState, useEffect } from "react";
-import GameItemDescription from "./GameItemDescription";
+import GameItem from "./GameItem";
 
 
-const HomeRecentList = () => {
+
+const TopGamesBrowserList = () => {
 
     const [recentListData, setRecentListData] = useState([])
 
     useEffect(() => {
-        fetch(`https://www.freetogame.com/api/games?&sort-by=release-date?&platform=all`)
+        fetch(`https://www.freetogame.com/api/games?platform=browser&sort-by=release-date`)
             .then(res => res.json())
             .then(data => {
-                // console.log(data.slice(0, 4))
+                console.log(data.slice(0, 4))
                 setRecentListData(data.slice(0, 4))
             })
     }, [])
-
     return (
-        <section className="HomeRecentList">
-
-            <h3>Recently Added</h3>
+        <section>
+            <h3>Top 4 Games for Browser in June 2022</h3>
             <article className="HomeListContainer">
                 {recentListData.map((game, i) => {
                     // console.log(game.title)
                     return (
-                        <GameItemDescription
+                        <GameItem
                             img={game.thumbnail}
                             title={game.title}
-                            description={game.short_description}
                             platform={game.platform}
                             id={game.id}
                             genre={game.genre}
@@ -38,10 +36,9 @@ const HomeRecentList = () => {
 
                 }
             </article>
-
             <button>SHOW MORE</button>
         </section>
-    )
+    );
 }
 
-export default HomeRecentList;
+export default TopGamesBrowserList;
