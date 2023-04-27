@@ -1,9 +1,11 @@
-import React from 'react';
-import style from "./Layout.module.scss"
-import {Outlet} from "react-router-dom";
+import React, {useState} from 'react';
+import style from "./Layout.module.scss";
 import NavBar from "../navigation/NavBar.jsx";
 
+
 const Layout = ({children}) => {
+
+
 	return (
 		<div className={style.layout}>
 			<NavBar/>
@@ -11,9 +13,7 @@ const Layout = ({children}) => {
 				<h1>FREE2GAME</h1>
 				<input type="text"/>
 			</header>
-			<main>
-				{children}
-			</main>
+			{children}
 		</div>
 	);
 };
