@@ -4,11 +4,11 @@ import HomeRecentList  from '../../components/HomeRecentList'
 
 const HomePage = () => {
 	return (
-		<div className={style.homePage}>
+		<main className={style.homePage}>
 			HomePage
 			<h1>THIS IS HOME</h1>
 			<HomeRecentList/>
-		</div>
+		</main>
 	);
 };
 
