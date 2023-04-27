@@ -14,7 +14,7 @@ const NavBar = () => {
 	return (
 		<aside
 			className={style.navBar}
-			style={{width: isNavBarOpen ? `250px` : `58px`}}
+			style={{width: isNavBarOpen ? `250px` : `64px`}}
 		>
 			<HamburgerButton
 				isNavbarOpen={isNavBarOpen}
