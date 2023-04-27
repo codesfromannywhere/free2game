@@ -1,9 +1,17 @@
 .navButton {
 	display: flex;
+	align-items: center;
+	overflow-x: hidden;
 
 	img {
 		aspect-ratio: 1 / 1;
 		object-fit: contain;
 		width: 50px;
+	}
+
+	h3 {
+		flex: 1;
+		padding: 0 12px;
+		white-space: nowrap;
 	}
 }

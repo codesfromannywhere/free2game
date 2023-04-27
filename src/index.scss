@@ -20,6 +20,11 @@
   -webkit-text-size-adjust: 100%;
 }
 
+body,
+#root {
+  min-height: 100vh;
+}
+
 img {
   display: block;
 }

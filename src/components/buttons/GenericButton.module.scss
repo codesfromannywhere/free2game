@@ -1,0 +1,20 @@
+.genericButton {
+	background: transparent;
+
+	outline: 2px solid transparent;
+
+	border: 2px solid rgba(255, 255, 255, 0.1);
+	border-radius: 8px;
+
+	transition-duration: 200ms;
+	transition-property: outline-color, background-color;
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.1);
+		outline: 2px solid rgb(75, 75, 150);
+	}
+
+	&:active {
+		background: rgba(255, 255, 255, 0.2);
+	}
+}
