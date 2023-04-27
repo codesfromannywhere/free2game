@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './RecentlyAddedPage.module.scss';
 import { useState, useEffect } from 'react';
-// import RecentlyAddedList from '../../components/recentlyAdded/RecentlyAddedList';
+import RecentListItem from '../../components/recentlyAdded/RecentListItem';
 
 const RecentlyAddedPage = () => {
 
@@ -20,7 +20,15 @@ const RecentlyAddedPage = () => {
 	return (
 		<main className={style.recentlyAddedPage}>
 			RecentlyAddedPage
-			{/* {recentlyAdded.map} */}
+			{recentlyAdded.map((game) => (
+				<RecentListItem
+					key={game.id}
+					image={game.thumbnail}
+					title={game.title}
+					platform={game.platform}
+					genre={game.genre}
+				/>
+			))}
 
 		</main>
 	);
