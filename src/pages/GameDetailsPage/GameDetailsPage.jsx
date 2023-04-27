@@ -18,18 +18,25 @@ const GameDetailsPage = () => {
 	console.log(gameDetails)
 
 	return (
-		<div className={style.gameDetailsPage}>
-			<main>
-				<section>
+		<main className={style.gameDetailsPage}>
+			<section className={style.heroSectionImage}>
+				<img src={gameDetails[0].thumbnail} alt="" />
+			</section>
+			<h2>{gameDetails[0].title.toUpperCase()}</h2>
+			<article>
+				<div>
 					<img src={gameDetails[0].thumbnail} alt={`thumbnail ${gameDetails[0].title}`} />
-				</section>
-				<h2>{gameDetails[0].title}</h2>
-				<article>
+					<p>Platform: {gameDetails[0].platform}</p>
+					<button>Action RPG</button>
+					<button>Play NOW</button>
 					<div>
+						<h3>About</h3>
+						<p>{gameDetails[0].description}</p>
 					</div>
-				</article>
-			</main>
-		</div>
+
+				</div>
+			</article>
+		</main>
 	);
 };
 
