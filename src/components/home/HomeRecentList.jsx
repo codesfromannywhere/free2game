@@ -10,7 +10,7 @@ const HomeRecentList = () => {
         fetch(`https://www.freetogame.com/api/games?&sort-by=release-date?&platform=all`)
             .then(res => res.json())
             .then(data => {
-                console.log(data.slice(0, 20))
+                // console.log(data.slice(0, 4))
                 setRecentListData(data.slice(0, 4))
             })
     }, [])
@@ -19,7 +19,7 @@ const HomeRecentList = () => {
         <section className="HomeRecentList">
 
             <h3>Recently Added</h3>
-            <section className="HomeRecentListSection">
+            <article className="HomeListContainer">
                 {recentListData.map((game, i) => {
                     // console.log(game.title)
                     return (
@@ -37,7 +37,7 @@ const HomeRecentList = () => {
                 })
 
                 }
-            </section>
+            </article>
 
             <button>SHOW MORE</button>
         </section>

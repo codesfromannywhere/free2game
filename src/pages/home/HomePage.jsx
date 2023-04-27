@@ -13,8 +13,6 @@ const HomePage = () => {
 			<HomeRecentList />
 			<TopGamesBrowserList />
 			<TopGamesPCList />
-
-
 		</main>
 	);
 };
