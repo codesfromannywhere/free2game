@@ -10,7 +10,7 @@ const GenericButton = ({
 }) => {
 	return (
 		<button
-			className={className}
+			className={[style.genericButton, className].join(" ")}
 			onClick={onClick ? onClick : undefined}
 			disabled={disabled}
 			{...props}
