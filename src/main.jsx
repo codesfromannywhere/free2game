@@ -4,9 +4,12 @@ import App from "./App";
 import "./imports.scss";
 import "./index.scss";
 import { BrowserRouter } from "react-router-dom";
+import Layout from "./components/layout/Layout.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
-      <App />
+        <Layout>
+            <App />
+        </Layout>
     </BrowserRouter>
 );

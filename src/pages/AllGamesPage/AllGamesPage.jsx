@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './AllGamesPage.scss?inline'
+import style from './AllGamesPage.module.scss?inline'
 
 const AllGamesPage = () => {
 	return (

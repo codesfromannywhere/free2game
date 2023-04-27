@@ -1,7 +1,5 @@
 import React from 'react';
 import style from './GameDetailsPage.scss?inline'
-import { useState, useEffect } from 'react';
-
 
 const GameDetailsPage = () => {
 
