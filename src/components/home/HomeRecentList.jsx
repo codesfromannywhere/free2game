@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import GameItemDescription from "./GameItemDescription";
-import {windowsIcon} from "../../assets/images/icon_windows.svg"
-import {BrowserIcon} from "../../assets/images/icon_browser.svg"
+import windowsIcon from "../../assets/images/icon_windows.svg"
+import BrowserIcon from "../../assets/images/icon_browser.svg"
 
 const HomeRecentList = () => {
 
