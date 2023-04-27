@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './RecentlyAddedPage.module.scss';
 import { useState, useEffect } from 'react';
+// import RecentlyAddedList from '../../components/recentlyAdded/RecentlyAddedList';
 
 const RecentlyAddedPage = () => {
 
@@ -17,9 +18,11 @@ const RecentlyAddedPage = () => {
 
 
 	return (
-		<div className={style.recentlyAddedPage}>
+		<main className={style.recentlyAddedPage}>
 			RecentlyAddedPage
-		</div>
+			{/* {recentlyAdded.map} */}
+
+		</main>
 	);
 };
 
