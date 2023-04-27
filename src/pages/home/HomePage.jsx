@@ -5,6 +5,7 @@ const HomePage = () => {
 	return (
 		<div className={style.homePage}>
 			HomePage
+			<h1>THIS IS HOME</h1>
 		</div>
 	);
 };
