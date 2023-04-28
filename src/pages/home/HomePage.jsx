@@ -9,7 +9,7 @@ import TopGamesPCList from '../../components/home/TopGamesPCList'
 const HomePage = () => {
 	return (
 		<main className={style.homePage}>
-			HomePage
+			Hier kommt eine HeroSection hin!
 			<HomeRecentList />
 			<TopGamesBrowserList />
 			<TopGamesPCList />

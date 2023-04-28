@@ -17,9 +17,9 @@ const HomeRecentList = () => {
     }, [])
 
     return (
-        <section className="HomeRecentList">
+        <section >
             <h3>Recently Added</h3>
-            <article className="HomeListContainer">
+            <article>
                 {recentListData.map((game, i) => {
                     // console.log(game.title)
                     return (
