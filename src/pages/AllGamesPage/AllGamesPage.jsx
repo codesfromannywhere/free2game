@@ -1,7 +1,8 @@
 import React from 'react';
-import style from './AllGamesPage.module.scss'
+import style from './AllGamesPage.module.scss';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import SearchTextContext from '../../components/layout/Layout.jsx';
 
 const AllGamesPage = () => {
 
@@ -12,8 +13,12 @@ const AllGamesPage = () => {
 			.then((res) => res.json())
 			.then((data) => setAllGames(data))
 	}, [])
+	// console.log(allGames);
 
-	console.log(allGames);
+
+	const searchText = useContext(SearchTextContext)
+	console.log(useContext(SearchTextContext));
+
 
 	return (
 		<main className={style.allGamesPage}>
