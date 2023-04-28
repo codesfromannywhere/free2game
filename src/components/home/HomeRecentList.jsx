@@ -17,7 +17,6 @@ const HomeRecentList = () => {
 
     return (
         <section className="HomeRecentList">
-
             <h3>Recently Added</h3>
             <article className="HomeListContainer">
                 {recentListData.map((game, i) => {
