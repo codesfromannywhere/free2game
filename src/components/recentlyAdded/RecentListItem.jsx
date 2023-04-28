@@ -1,5 +1,8 @@
 import style from './RecentListItem.module.scss';
 import Button from '../buttons/GenericButton';
+import windowsIcon from "../../assets/images/icon_windows.svg";
+import browserIcon from '../../assets/images/icon_browser.svg';
+
 
 const RecentListItem = (props) => {
     return (
@@ -11,7 +14,7 @@ const RecentListItem = (props) => {
             </div>
             <hr />
             <div>
-                <p>{props.platform}</p>
+                <img src={props.platform === "Web Browser" ? browserIcon : windowsIcon} alt="platform icon" />
                 <p>{props.genre}</p>
             </div>
         </article>
