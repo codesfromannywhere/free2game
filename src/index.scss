@@ -24,7 +24,10 @@
 
 html,
 body {
+  background-image: url("./assets/images/background/Overlay_Abstract_4K_overlay.png");
   background-color: $main_background_color;
+  background-blend-mode: multiply;
+  background-size: 50vw
 }
 
 body,
