@@ -12,18 +12,37 @@
 
     .gameCardContent {
         padding: 2.25rem;
+
+        h3 {
+            padding-bottom: 1.5rem;
+        }
+
+        p {
+            color: $game_item_description_color;
+            padding-bottom: 3rem;
+        }
+
+        .bottomLine {
+            height: 1px;
+            width: 16rem;
+            background-color: $main_foreground_color;
+            margin-top: 3rem;
+
+        }
+
+        .buttonReadMore {
+            background-color: $readmore_normal_background_color;
+            padding: 0.75rem 1.5rem;
+            width: 9rem;
+            text-align: center;
+        }
+
+        .filterTagContent {
+            display: flex;
+        }
     }
 
-    .bottomLine {
-        height: 1px;
-        width: 16rem;
-        background-color: $main_foreground_color;
-    }
 
-    .buttonReadMore {
-        background-color: $readmore_normal_background_color;
-        padding: 0.75rem 1.5rem;
-        width: 9rem;
-        text-align: center;
-    }
+
+
 }

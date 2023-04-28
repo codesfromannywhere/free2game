@@ -16,7 +16,7 @@ const GameItem_EX = (props) => {
                 <GenericLink className={style.buttonReadMore}>READ MORE</GenericLink>
                 <div className={style.bottomLine}></div>
             </article>
-            <article>
+            <article className={style.filterTagContent}>
                 <FilterTag img={props.platform === "Web Browser" ? BrowserIcon : windowsIcon} />
                 <FilterTag text={props.genre} />
             </article>
