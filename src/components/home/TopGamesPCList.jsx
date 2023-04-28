@@ -19,8 +19,8 @@ const TopGamesPCList = () => {
     }, [])
     return (
         <section>
-            <h3>Top 4 Games for PC in June 2022</h3>
-            <article className="HomeListContainer">
+            <h2>Top 4 Games for PC in June 2022</h2>
+            <article>
 
                 {recentListData.map((game, i) => {
                     // console.log(game.title)

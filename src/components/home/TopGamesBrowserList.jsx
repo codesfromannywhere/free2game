@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import GameItem from "./GameItem";
 import GameItem_EX from '../experimental/GameItem_EX'
+import style from "../home/HomeListGrid.module.scss";
+
 
 const TopGamesBrowserList = () => {
 
@@ -16,8 +18,8 @@ const TopGamesBrowserList = () => {
     }, [])
     return (
         <section>
-            <h3>Top 4 Games for Browser in June 2022</h3>
-            <article className="HomeListContainer">
+            <h2>Top 4 Games for Browser in June 2022</h2>
+            <article className={style.gameCardContainer}>
                 {recentListData.map((game, i) => {
                     // console.log(game.title)
                     return (
