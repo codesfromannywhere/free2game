@@ -14,7 +14,9 @@ const Layout = ({children}) => {
 					<h1>FREE2GAME</h1>
 				</hgroup>
 
-				<input type="text"/>
+				<input type="text">
+
+				</input>
 			</header>
 			{children}
 		</div>
