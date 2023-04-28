@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import GameItemDescription from "./GameItemDescription";
+import GameItem_EX from '../experimental/GameItem_EX'
 
 
 const HomeRecentList = () => {
@@ -22,7 +23,7 @@ const HomeRecentList = () => {
                 {recentListData.map((game, i) => {
                     // console.log(game.title)
                     return (
-                        <GameItemDescription
+                        <GameItem_EX
                             img={game.thumbnail}
                             title={game.title}
                             description={game.short_description}

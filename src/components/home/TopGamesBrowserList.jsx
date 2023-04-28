@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import GameItem from "./GameItem";
+import GameItem_EX from '../experimental/GameItem_EX'
 
 const TopGamesBrowserList = () => {
 
@@ -20,7 +21,7 @@ const TopGamesBrowserList = () => {
                 {recentListData.map((game, i) => {
                     // console.log(game.title)
                     return (
-                        <GameItem
+                        <GameItem_EX
                             img={game.thumbnail}
                             title={game.title}
                             platform={game.platform}
