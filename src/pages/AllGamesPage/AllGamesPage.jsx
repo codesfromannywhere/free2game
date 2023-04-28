@@ -2,6 +2,7 @@ import React from 'react';
 import style from './AllGamesPage.module.scss'
 
 import { useState, useEffect } from 'react';
+import GenericDropdown from "../../components/buttons/GenericDropdown.jsx";
 
 const AllGamesPage = () => {
 
@@ -17,8 +18,7 @@ const AllGamesPage = () => {
 
 	return (
 		<main className={style.allGamesPage}>
-
-
+			<GenericDropdown></GenericDropdown>
 		</main>
 	);
 };
@@ -52,10 +52,12 @@ export default AllGamesPage;
 
 // import GenericDropdown from '../../components/buttons/GenericDropdown';
 
+// const [savedFilters, setSavedFilter] = useState([]);
+
 {/* <GenericDropdown
 				name="test">
 				<option value={"Platform"}>PLATFORM</option>
-				<option>All Platforms</option>
+				<option><input type="checkbox" value="All Platforms"/></option>
 				<option>Windows (PC)</option>
 				<option>Browser (Web)</option>
 			</GenericDropdown>
