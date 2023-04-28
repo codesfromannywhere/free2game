@@ -2,6 +2,7 @@ import windowsIcon from "../../assets/images/icon_windows.svg"
 import BrowserIcon from "../../assets/images/icon_browser.svg"
 import GenericLink from "../buttons/GenericLink.jsx";
 import style from "../experimental/GameItem_EX.module.scss";
+import FilterTag from "../FilterTag";
 
 const GameItem_EX = (props) => {
     const description = props.description ? (<p>{props.description}</p>) : "";
@@ -15,8 +16,9 @@ const GameItem_EX = (props) => {
                 <GenericLink>Read More</GenericLink>
             </article>
             <article>
-                <img src={props.platform === "Web Browser" ? BrowserIcon : windowsIcon} alt="platform icon" />
-                <p>{props.genre}</p>
+                <FilterTag img={props.platform === "Web Browser" ? BrowserIcon : windowsIcon} />
+                <FilterTag text={props.genre} />
+
             </article>
         </section>
     );
