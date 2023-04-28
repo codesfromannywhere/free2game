@@ -6,11 +6,15 @@
 	grid-template-columns: 64px 1fr;
 
 	.navBar {
+
 		grid-column: 1 / 2;
 		grid-row: 1 / 3;
 	}
 
 	& > header {
+		position: sticky;
+		top: 0;
+		left: 0;
 		grid-column: 2 / 3;
 		grid-row: 1 / 2;
 

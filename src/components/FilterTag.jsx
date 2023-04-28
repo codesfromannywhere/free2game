@@ -6,9 +6,7 @@ const FilterTag = ({img, text}) => {
 	return (
 		<GenericButton className={style.filterTag}>
 			{img ? <img src={img} alt={`${text} icon}`}/> : ""}
-			<p>
-				{text}
-			</p>
+			{text ? <p>{text}</p> : ""}
 		</GenericButton>
 	);
 };
