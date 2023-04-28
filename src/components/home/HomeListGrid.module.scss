@@ -1,9 +1,13 @@
 @import "../../data/vars";
 
+section,
+h2 {
+    margin: 0 3rem;
+
+}
 
 .gameCardContainer {
-    margin: 0 5rem;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(50px, 300px));
     gap: 2rem
 }
