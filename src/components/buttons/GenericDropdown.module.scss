@@ -1,0 +1,24 @@
+@import "../../data/vars";
+
+.genericDropdown {
+	color: $button_normal_foreground_color;
+	background: $button_normal_background_color;
+
+	outline: 2px solid transparent;
+
+	border: 2px solid $button_normal_border_color;
+	border-radius: 8px;
+
+	transition-duration: 200ms;
+	transition-property: outline-color, background-color;
+
+	&:hover {
+		color: $button_hovered_foreground_color;
+		background: $button_hovered_background_color;
+		outline: 2px solid $button_hovered_outline_color;
+	}
+
+	&:active {
+		background: $button_active_background_color;
+	}
+}
