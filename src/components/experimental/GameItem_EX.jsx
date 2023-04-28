@@ -8,17 +8,17 @@ const GameItem_EX = (props) => {
     const description = props.description ? (<p>{props.description}</p>) : "";
 
     return (
-        <section className={style.gameCardContainer}>
+        <section className={style.gameCard}>
             <img src={props.img} alt={props.title} />
-            <article className="gameCard">
+            <article className={style.gameCardContent}>
                 <h3>{props.title}</h3>
                 {description}
                 <GenericLink>Read More</GenericLink>
+                <div className={style.bottomLine}></div>
             </article>
             <article>
                 <FilterTag img={props.platform === "Web Browser" ? BrowserIcon : windowsIcon} />
                 <FilterTag text={props.genre} />
-
             </article>
         </section>
     );

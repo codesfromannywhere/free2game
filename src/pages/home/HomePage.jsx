@@ -11,8 +11,8 @@ const HomePage = () => {
 		<main className={style.homePage}>
 			Hier kommt eine HeroSection hin!
 			<HomeRecentList />
-			<TopGamesBrowserList />
 			<TopGamesPCList />
+			<TopGamesBrowserList />
 		</main>
 	);
 };

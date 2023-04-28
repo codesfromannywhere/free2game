@@ -1,0 +1,9 @@
+@import "../../data/vars";
+
+
+.gameCardContainer {
+    margin: 0 5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem
+}
