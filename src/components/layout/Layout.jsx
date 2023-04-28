@@ -1,25 +1,27 @@
-import React from 'react';
+import React, {createContext, useState} from 'react';
 import style from "./Layout.module.scss";
 import NavBar from "../navigation/NavBar.jsx";
 import LogoImage from "../../assets/images/Logo.svg"
+import SearchBar from "../navigation/SearchBar.jsx";
 
+export const SearchTextContext = createContext([]);
 const Layout = ({children}) => {
-
+	const [searchText, setSearchText] = useState("Test");
 	return (
-		<div className={style.layout}>
-			<NavBar/>
-			<header>
-				<hgroup>
-					<img src={LogoImage} alt="Logo"/>
-					<h1>FREE2GAME</h1>
-				</hgroup>
+		<SearchTextContext.Provider value={[searchText, setSearchText]}>
+			<div className={style.layout}>
+				<NavBar/>
+				<header>
+					<hgroup>
+						<img src={LogoImage} alt="Logo"/>
+						<h1>FREE2GAME</h1>
+					</hgroup>
 
-				<input type="text">
-
-				</input>
-			</header>
-			{children}
-		</div>
+					<SearchBar/>
+				</header>
+				{children}
+			</div>
+		</SearchTextContext.Provider>
 	);
 };
 
