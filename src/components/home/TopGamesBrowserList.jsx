@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import GameItem from "./GameItem";
 
-
-
 const TopGamesBrowserList = () => {
 
     const [recentListData, setRecentListData] = useState([])
