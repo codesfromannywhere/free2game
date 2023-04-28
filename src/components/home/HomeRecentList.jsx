@@ -4,6 +4,7 @@ import GameItem_EX from '../experimental/GameItem_EX'
 import style from "../home/HomeListGrid.module.scss";
 
 
+
 const HomeRecentList = () => {
 
     const [recentListData, setRecentListData] = useState([])
@@ -39,8 +40,6 @@ const HomeRecentList = () => {
 
                 }
             </article>
-
-            <button>SHOW MORE</button>
         </section>
     )
 }

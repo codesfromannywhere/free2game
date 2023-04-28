@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
-import GameItem from "./GameItem";
-import GameItem_EX from '../experimental/GameItem_EX'
-
-
+import TopGamesPCItem from "./TopGamesPCItem.jsx";
+import style from "../home/TopGamesPCList.module.scss"
 
 
 const TopGamesPCList = () => {
@@ -20,25 +18,28 @@ const TopGamesPCList = () => {
     return (
         <section>
             <h2>Top 4 Games for PC in June 2022</h2>
-            <article>
+            <article className={style.PCGameCardContainer}>
 
                 {recentListData.map((game, i) => {
                     // console.log(game.title)
                     return (
-                        <GameItem_EX
+                        <TopGamesPCItem
                             img={game.thumbnail}
                             title={game.title}
                             platform={game.platform}
                             id={game.id}
                             genre={game.genre}
                             key={i}
+                            style={{
+                                gridRow: i === 0 ? "1 / 4" : `${i} / ${i + 1}`
+                            }}
                         />
                     )
 
                 })
                 }
             </article>
-            <button>SHOW MORE</button>
+
         </section>);
 }
 

@@ -37,7 +37,6 @@ const TopGamesBrowserList = () => {
 
                 }
             </article>
-            <button>SHOW MORE</button>
         </section>
     );
 }
