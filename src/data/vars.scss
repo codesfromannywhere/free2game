@@ -17,6 +17,7 @@ $button_normal_foreground_color: rgba(240, 240, 240, 1);
 $button_normal_background_color: rgba(0, 0, 0, 0);
 $button_normal_border_color: rgba(255, 255, 255, 0.1);
 
+
 // Hovered
 $button_hovered_foreground_color: rgba(255, 255, 255, 1);
 $button_hovered_background_color: rgba(255, 255, 255, 0.1);
@@ -32,6 +33,22 @@ $button_active_outline_color: rgb(125, 125, 200);
 $link_normal_foreground_color: $button_normal_foreground_color;
 $link_normal_background_color: $button_normal_background_color;
 $link_normal_border_color: $button_normal_border_color;
+
+// Hovered
+$link_hovered_foreground_color: $button_hovered_foreground_color;
+$link_hovered_background_color: $button_hovered_background_color;
+$link_hovered_outline_color: $button_hovered_outline_color;
+
+// Active
+$link_active_background_color: $button_active_background_color;
+
+
+/** -------------------------------------------
+					Link READ MORE 
+----------------------------------------------- **/
+$readmore_normal_foreground_color: $button_normal_foreground_color;
+$readmore_normal_background_color: #FF4654;
+$link_normal_background_color: $button_normal_background_color;
 
 // Hovered
 $link_hovered_foreground_color: $button_hovered_foreground_color;
