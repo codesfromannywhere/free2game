@@ -1,28 +1,23 @@
 import React from 'react';
 import style from './AllGamesPage.module.scss';
-
-<<<<<<< HEAD
+import { SearchTextContext } from '../../components/layout/Layout.jsx';
 import { useState, useEffect, useContext } from 'react';
-import SearchTextContext from '../../components/layout/Layout.jsx';
-=======
-import { useState, useEffect } from 'react';
 import GenericDropdown from "../../components/buttons/GenericDropdown.jsx";
->>>>>>> 14395bf8b58972d148abd66a780ab37c06441bf7
 
 const AllGamesPage = () => {
 
 	const [allGames, setAllGames] = useState([]);
-	useEffect(() => {
-		// fetch(`https://www.freetogame.com/api/games?platform=${platform}&category=${genre}&sort-by=${sort}`)
-		fetch(`https://www.freetogame.com/api/games?platform=browser&category=mmorpg&sort-by=release-date`)
-			.then((res) => res.json())
-			.then((data) => setAllGames(data))
-	}, [])
+	// useEffect(() => {
+	// fetch(`https://www.freetogame.com/api/games?platform=${platform}&category=${genre}&sort-by=${sort}`)
+	// 	fetch(`https://www.freetogame.com/api/games?platform=browser&category=mmorpg&sort-by=release-date`)
+	// 		.then((res) => res.json())
+	// 		.then((data) => setAllGames(data))
+	// }, [])
 	// console.log(allGames);
 
 
-	const searchText = useContext(SearchTextContext)
-	console.log(useContext(SearchTextContext));
+	const [searchText] = useContext(SearchTextContext)
+	console.log(searchText);
 
 
 	return (
