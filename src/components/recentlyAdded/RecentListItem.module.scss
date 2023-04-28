@@ -1,9 +1,12 @@
+@import "../../data/vars.scss";
+
 .listItem_container {
-    background-color: #102130;
+    background: $card_normal_background_color;
     width: 19rem;
     border-radius: 24px;
+    color: $card_normal_foreground_color;
 
-    img {
+    img :nth-of-type(1) {
         width: 100%;
         border-radius: 24px;
     }

@@ -2,6 +2,7 @@ import React from 'react';
 import style from './RecentlyAddedPage.module.scss';
 import { useState, useEffect } from 'react';
 import RecentListItem from '../../components/recentlyAdded/RecentListItem';
+import GameItem_EX from '../../components/experimental/GameItem_EX';
 
 const RecentlyAddedPage = () => {
 
@@ -19,7 +20,7 @@ const RecentlyAddedPage = () => {
 
 	return (
 		<main className={style.recentlyAddedPage}>
-			{recentlyAdded.map((game) => (
+			{/* {recentlyAdded.map((game) => (
 				<RecentListItem
 					key={game.id}
 					image={game.thumbnail}
@@ -27,7 +28,18 @@ const RecentlyAddedPage = () => {
 					platform={game.platform}
 					genre={game.genre}
 				/>
+			))} */}
+
+			{recentlyAdded.map((game) => (
+				<GameItem_EX
+					key={game.id}
+					img={game.thumbnail}
+					title={game.title}
+					platform={game.platform}
+					genre={game.genre}
+				/>
 			))}
+
 		</main>
 	);
 };
