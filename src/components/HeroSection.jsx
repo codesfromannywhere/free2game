@@ -6,7 +6,7 @@ const HeroSection = ({title, backgroundImage}) => {
 		<header
 			className={style.heroSection}
 			style={{
-				backgroundImage: backgroundImage
+				backgroundImage: url(backgroundImage)
 			}}
 		>
 			{
