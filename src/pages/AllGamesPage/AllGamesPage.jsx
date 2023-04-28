@@ -1,8 +1,13 @@
 import React from 'react';
 import style from './AllGamesPage.module.scss';
 
+<<<<<<< HEAD
 import { useState, useEffect, useContext } from 'react';
 import SearchTextContext from '../../components/layout/Layout.jsx';
+=======
+import { useState, useEffect } from 'react';
+import GenericDropdown from "../../components/buttons/GenericDropdown.jsx";
+>>>>>>> 14395bf8b58972d148abd66a780ab37c06441bf7
 
 const AllGamesPage = () => {
 
@@ -22,8 +27,7 @@ const AllGamesPage = () => {
 
 	return (
 		<main className={style.allGamesPage}>
-
-
+			<GenericDropdown></GenericDropdown>
 		</main>
 	);
 };
@@ -57,10 +61,12 @@ export default AllGamesPage;
 
 // import GenericDropdown from '../../components/buttons/GenericDropdown';
 
+// const [savedFilters, setSavedFilter] = useState([]);
+
 {/* <GenericDropdown
 				name="test">
 				<option value={"Platform"}>PLATFORM</option>
-				<option>All Platforms</option>
+				<option><input type="checkbox" value="All Platforms"/></option>
 				<option>Windows (PC)</option>
 				<option>Browser (Web)</option>
 			</GenericDropdown>
