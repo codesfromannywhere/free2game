@@ -1,0 +1,13 @@
+.heroSection {
+	height: 20vh;
+	object-fit: cover;
+	background-position: center;
+
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+
+	h1 {
+		padding: 2rem;
+	}
+}

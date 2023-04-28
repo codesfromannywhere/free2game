@@ -5,7 +5,7 @@ import GenericButton from "./buttons/GenericButton.jsx";
 const FilterTag = ({img, text}) => {
 	return (
 		<GenericButton className={style.filterTag}>
-			<img src={img} alt={`${text} icon}`}/>
+			{img ? <img src={img} alt={`${text} icon}`}/> : ""}
 			<p>
 				{text}
 			</p>
