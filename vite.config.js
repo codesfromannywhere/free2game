@@ -9,3 +9,4 @@ export default defineConfig({
     port: 3000
   }
 });
+process.env.BROWSER = "chrome"

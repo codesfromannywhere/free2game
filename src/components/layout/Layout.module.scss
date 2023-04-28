@@ -1,6 +1,8 @@
+@import "../../data/vars";
+
 .layout {
 	display: grid;
-	grid-template-rows: 50px 1fr;
+	grid-template-rows: min-content 1fr;
 	grid-template-columns: 64px 1fr;
 
 	.navBar {
@@ -13,6 +15,17 @@
 		grid-row: 1 / 2;
 
 		display: flex;
+		justify-content: space-between;
+
+		border-bottom: 2px solid $separator_color;
+		background: $paper_background_color;
+		color: $paper_foreground_color;
+
+		padding: 0.5rem;
+
+		hgroup {
+			display: flex;
+		}
 	}
 
 	main {

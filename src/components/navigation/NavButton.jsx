@@ -2,9 +2,9 @@ import React from 'react';
 import style from './NavButton.module.scss'
 import GenericLink from "../buttons/GenericLink.jsx";
 
-const NavButton = ({icon, iconDescription, buttonText, linkPath}) => {
+const NavButton = ({icon, iconDescription, buttonText, to}) => {
 	return (
-		<GenericLink className={style.navButton} to={linkPath}>
+		<GenericLink className={style.navButton} to={to}>
 			<img src={icon} alt={iconDescription}/>
 			<h3>
 				{buttonText}

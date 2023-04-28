@@ -6,6 +6,10 @@ $main_foreground_color: rgb(240, 240, 240);
 $paper_background_color: rgba(0, 0, 0, 0.75);
 $paper_foreground_color: rgb(240, 240, 240);
 
+
+
+$separator_color: rgb(70, 70, 70);
+
 /** -------------------------------------------
 					Button
 ----------------------------------------------- **/
@@ -36,3 +40,17 @@ $link_hovered_outline_color: $button_hovered_outline_color;
 
 // Active
 $link_active_background_color: $button_active_background_color;
+
+/** -------------------------------------------
+					Cards
+----------------------------------------------- **/
+
+$card_normal_background_color: rgba(20, 20, 50);
+$card_normal_foreground_color: rgba(240, 240, 240, 1);
+
+
+$card_hovered_background_color: rgba(30, 30, 60);
+$card_hovered_foreground_color: rgba(250, 250, 250, 1);
+
+$card_active_background_color: rgba(10, 10, 40);
+$card_active_foreground_color: rgba(230, 230, 230, 1);

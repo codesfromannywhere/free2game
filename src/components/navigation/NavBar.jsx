@@ -24,14 +24,17 @@ const NavBar = () => {
 				<NavButton
 					icon={HomeIcon}
 					buttonText={"Homepage"}
+					to={"/"}
 				/>
 				<NavButton
 					icon={GamesIcon}
 					buttonText={"All Games"}
+					to={"/all-games"}
 				/>
 				<NavButton
 					icon={RecentlyIcon}
 					buttonText={"Recently Added"}
+					to={"recently-added"}
 				/>
 			</nav>
 		</aside>
