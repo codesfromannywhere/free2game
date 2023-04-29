@@ -3,8 +3,13 @@
 
 .homePage {
     header {
-        margin-bottom: 6rem;
+        // margin-bottom: 6rem;
     }
+}
+
+
+.buttonright {
+    align-self: end;
 }
 
 .buttonReadMore {
@@ -12,6 +17,13 @@
     padding: 0.75rem 1.5rem;
     width: 9rem;
     text-align: center;
-    margin: 3rem 6rem;
+    overflow: hidden;
+    float: right;
+    margin: 2.5rem 6rem;
+
+
 
 }
+
+/* position: absolute;
+right: 0; */

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import GameItem from "./GameItem";
 import GameItem_EX from '../experimental/GameItem_EX'
 import style from "../home/HomeListGrid.module.scss";
 
