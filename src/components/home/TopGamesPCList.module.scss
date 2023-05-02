@@ -17,9 +17,13 @@
     width: 9rem;
     text-align: center;
     margin-bottom: 1.5rem;
+    transition-duration: 200ms;
+    transition-property: outline-color, background-color;
 
     &:hover {
-        background-color: $card_hovered_background_color;
+        color: $link_hovered_foreground_color;
+        outline: 2px solid $link_hovered_outline_color;
+        background-color: $readmore_normal_background_color;
     }
 
     &:active,
