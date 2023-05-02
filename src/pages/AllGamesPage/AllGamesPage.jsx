@@ -29,7 +29,7 @@ const AllGamesPage = () => {
 
 	return (
 		<main className={style.allGamesPage}>
-			{/* <GenericDropdown></GenericDropdown> */}
+			<GenericDropdown></GenericDropdown>
 			<section className={style.gridList}>
 				{allGames.map((elt) => {
 					if (elt.title.toLowerCase().includes(searchText.toLowerCase())) {
@@ -41,9 +41,12 @@ const AllGamesPage = () => {
 								platform={elt.platform}
 								genre={elt.genre}
 							/>
-						)
+						);
+					} else {
+						return null;
 					}
 				})}
+
 			</section>
 		</main>
 	);
@@ -117,3 +120,25 @@ export default AllGamesPage;
 				<option>Release Date</option>
 				<option>Alphabetical</option>
 			</GenericDropdown> */}
+
+
+
+// ============================================	
+// FILTER + SORTIERUNG NACH ANFANGSBUCHSTABE:
+// ============================================	
+			// {allGames
+			// 	.filter((game) =>
+			// 		game.title.toLowerCase().startsWith(searchText.toLowerCase())
+			// 	)
+			// 	.sort((gameA, gameB) =>
+			// 		gameA.title.toLowerCase() > gameB.title.toLowerCase() ? 1 : -1
+			// 	)
+			// 	.map((game) => (
+			// 		<GameItem_EX
+			// 			key={game.id}
+			// 			img={game.thumbnail}
+			// 			title={game.title}
+			// 			platform={game.platform}
+			// 			genre={game.genre}
+			// 		/>
+			// 	))}
