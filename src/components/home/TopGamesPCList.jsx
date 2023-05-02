@@ -39,7 +39,7 @@ const TopGamesPCList = () => {
 
                     </div>
 
-                    <img className={style.gameImg} src={recentListData[0]?.thumbnail} alt="Game Thumbnail" />
+                    <img src="https://www.freetogame.com/g/548/dead-cide-club-1.jpg" className={style.gameImg} alt="Game Thumbnail" />
                 </div>
 
                 <div className={style.GameSmaller}>
