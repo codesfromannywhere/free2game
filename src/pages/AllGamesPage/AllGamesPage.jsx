@@ -121,8 +121,6 @@ const AllGamesPage = () => {
 		}
 	}, [allGames, platformStates, sortStates, genreStates, searchText]);
 
-
-
 	return (
 		<main className={style.allGamesPage}>
 			<HeroSection title="ALL GAMES" backgroundImage={"https://www.freetogame.com/g/137/Metal-War-Online-3.jpg"}/>
@@ -133,6 +131,7 @@ const AllGamesPage = () => {
 				{filteredGames.map((elt) => {
 					return (
 						<GameItem_EX
+							//TODO: @Steffi: Füge die id hier hinzu. Sonst funktioniert der read more button nicht
 							key={elt.id}
 							img={elt.thumbnail}
 							title={elt.title}
