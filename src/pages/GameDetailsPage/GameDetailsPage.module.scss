@@ -1,32 +1,23 @@
-// GLOBAL Style______________________________________________________ 
-
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-img {
-	border-radius: 24px;
-}
-
-h2 {
-	font-size: 3rem;
-}
-
-p {
-	font-size: 1rem;
-}
-
-button,
-a {
-	display: block;
-}
-
 // ELEMENT Style_____________________________________________________ 
 
 .gameDetailsPage {
-	margin-left: 1.25rem;
+
+	img {
+		border-radius: 24px;
+	}
+
+	h2 {
+		font-size: 3rem;
+	}
+
+	p {
+		font-size: 1rem;
+	}
+
+	button,
+	a {
+		display: block;
+	}
 
 	.heroSection img {
 		width: 82rem;
@@ -47,8 +38,9 @@ a {
 		width: 50%;
 		margin-left: 5rem;
 
-		h3 {
-			margin-top: 2.25rem;
+		.heroSection img {
+			width: 100%;
+			border-radius: 0;
 		}
 
 		img {
