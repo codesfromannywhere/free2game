@@ -21,7 +21,7 @@ const TopGamesPCList = () => {
             })
     }, [])
     return (
-        <section>
+        <section className={style.gameCardSec}>
             <h2>Top 4 Games for PC in January 2023</h2>
             <article className={style.PCGameCardContainer}>
 

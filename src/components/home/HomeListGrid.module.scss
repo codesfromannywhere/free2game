@@ -1,15 +1,5 @@
 @import "../../data/vars";
 
-// section,
-// h2 {
-//     margin: 0 3rem;
-
-//     &>h2 {
-//         margin-top: 10rem;
-//         margin-bottom: 3rem;
-//     }
-// }
-
 .gameCardSec {
     margin: 0 3rem;
 
@@ -25,6 +15,4 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(50px, 290px));
     gap: 2rem;
-
-
 }

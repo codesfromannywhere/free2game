@@ -13,11 +13,11 @@ const HomePage = () => {
 		<main className={style.homePage}>
 			<HeroSection title="Find & track the best free-to-play games!" backgroundImage={`https://www.freetogame.com/g/452/Call-of-Duty-Warzone-1.jpg`} />
 			<HomeRecentList />
-			<GenericLink className={style.buttonReadMore}>SHOW MORE</GenericLink>
+			<GenericLink className={style.buttonReadMore} to={"recently-added"}>SHOW MORE</GenericLink >
 			<TopGamesPCList />
-			<GenericLink className={style.buttonReadMore}>SHOW MORE</GenericLink>
+			<GenericLink className={style.buttonReadMore} to={"/all-games"}>SHOW MORE</GenericLink>
 			<TopGamesBrowserList />
-			<GenericLink className={style.buttonReadMore}>SHOW MORE</GenericLink>
+			<GenericLink className={style.buttonReadMore} to={"/all-games"}>SHOW MORE</GenericLink>
 		</main>
 	);
 };
