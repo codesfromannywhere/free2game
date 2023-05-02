@@ -3,6 +3,7 @@ import style from "./Layout.module.scss";
 import NavBar from "../navigation/NavBar.jsx";
 import LogoImage from "../../assets/images/Logo.svg"
 import SearchBar from "../navigation/SearchBar.jsx";
+import {Link} from "react-router-dom";
 
 export const SearchTextContext = createContext([]);
 const Layout = ({ children }) => {
@@ -12,10 +13,10 @@ const Layout = ({ children }) => {
 			<div className={style.layout}>
 				<NavBar />
 				<header>
-					<hgroup>
+					<Link to={"/"}>
 						<img src={LogoImage} alt="Logo" />
 						<h1>FREE2GAME</h1>
-					</hgroup>
+					</Link>
 
 					<SearchBar />
 				</header>

@@ -30,9 +30,17 @@
 
 		z-index: 5;
 
-		hgroup {
+		& > a {
+			text-decoration: inherit;
+			color: inherit;
 			display: flex;
 			gap: 1rem;
+
+			transition: filter	500ms;
+
+			&:hover {
+				filter: drop-shadow(0 0 16px rgb(250, 100, 100));
+			}
 		}
 
 		input[type="text"] {
