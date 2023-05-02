@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import style from './GameDetailsPage.module.scss';
+import { useParams } from 'react-router-dom';
 
 // import Components
 import GenericLink from '../../components/buttons/GenericLink';
@@ -9,6 +10,8 @@ import GenericButton from '../../components/buttons/GenericButton';
 // _______________________________________________________________________
 
 const GameDetailsPage = () => {
+
+
 
 	const [gameDetails, setGameDetails] = useState({
 		title: "loading",
