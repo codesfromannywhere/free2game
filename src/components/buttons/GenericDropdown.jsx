@@ -16,7 +16,7 @@ const GenericDropdown = ({
 	const [isExpanded, setIsExpanded] = useState(false);
 	return (
 		<div className={[style.genericDropdown, className].join(" ")}{...props}>
-			<div className="selectBox"
+			<div className={style.selectBox}
 				 style={{
 					 position: "relative"
 				 }}
@@ -34,7 +34,7 @@ const GenericDropdown = ({
 					bottom: 0,
 				}}></div>
 			</div>
-			<div style={{display: isExpanded ? "block" : "none"}}>
+			<div style={{display: isExpanded ? "block" : "none"}} className={style.option}>
 				{options.map((item, index) => {
 					return (
 						<label htmlFor={item.text} key={item.text + index}>

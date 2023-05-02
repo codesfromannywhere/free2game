@@ -1,6 +1,8 @@
 @import "../../data/vars";
 
 .genericDropdown {
+	display: inline-block;
+	padding: 0 1rem 1rem 1rem;
 	color: $button_normal_foreground_color;
 	background: $button_normal_background_color;
 
@@ -20,5 +22,19 @@
 
 	&:active {
 		background: $button_active_background_color;
+	}
+
+	.selectBox {
+		display: inline-block;
+		select {
+			height: 2rem;
+			background: none;
+			padding: 0 1rem;
+			border: none;
+		}
+	}
+
+	.option {
+
 	}
 }
