@@ -12,7 +12,7 @@ import GenericLink from "../../components/buttons/GenericLink";
 const HomePage = () => {
 	return (
 		<main className={style.homePage}>
-			<HeroSection title="Find & track the best free-to-play games!" backgroundImage={image} />
+			<HeroSection title="Find & track the best free-to-play games!" backgroundImage={`https://www.freetogame.com/g/523/thumbnail.jpg`} />
 			<HomeRecentList />
 			<GenericLink className={style.buttonReadMore}>SHOW MORE</GenericLink>
 			<TopGamesPCList />
