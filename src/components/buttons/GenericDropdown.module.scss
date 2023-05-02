@@ -8,8 +8,6 @@
 	background: #FF4654;
 	border-radius: 15px;
 
-
-
 	user-select: none;
 	margin: 6rem 3rem 0 3rem;
 
@@ -25,10 +23,16 @@
 		select {
 			height: 2.5rem;
 			background: transparent;
-			padding: 0 1rem;
+			padding: 0 1.5rem;
 			border: none;
-			width: 100%;
+			width: 85%;
 			font-family: Oswald;
+			font-weight: 700;
+			appearance: none;
+		}
+
+		&::after {
+			content: "V";
 
 		}
 
@@ -40,6 +44,9 @@
 
 		&:active {
 			background: $button_active_background_color;
+			// transform: rotate(180deg);
+
+
 		}
 	}
 
@@ -51,6 +58,7 @@
 		background: $filter_normal_background_color;
 		border-radius: 15px;
 		margin-top: .2rem;
+
 
 
 		label {
