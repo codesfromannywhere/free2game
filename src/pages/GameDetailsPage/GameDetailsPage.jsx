@@ -9,10 +9,10 @@ import GenericButton from '../../components/buttons/GenericButton';
 
 // _______________________________________________________________________
 
-
 const GameDetailsPage = () => {
 
-
+	const name = useParams();
+	const gamesId = name.id;
 
 	const [gameDetails, setGameDetails] = useState({
 		title: "loading",
@@ -34,13 +34,16 @@ const GameDetailsPage = () => {
 	});
 
 	useEffect(() => {
-		fetch('https://www.freetogame.com/api/game?id=452')
+		fetch(`https://www.freetogame.com/api/game?id=451`)
 			.then(res => res.json())
 			.then(data => {
 				console.log(data);
 				setGameDetails(data);
 			})
 	}, [])
+
+	// ${gamesId}
+
 
 	console.log(gameDetails);
 
