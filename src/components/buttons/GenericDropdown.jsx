@@ -20,7 +20,7 @@ const GenericDropdown = ({
 				onClick={() => {
 					setIsExpanded(!isExpanded);
 				}}>
-				<select>
+				<select >
 					<option>{title}</option>
 				</select>
 				<div className="overSelect" style={{

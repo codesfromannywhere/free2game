@@ -33,7 +33,6 @@
 
 		&::after {
 			content: "V";
-
 		}
 
 		&:hover {
@@ -44,9 +43,6 @@
 
 		&:active {
 			background: $button_active_background_color;
-			// transform: rotate(180deg);
-
-
 		}
 	}
 
