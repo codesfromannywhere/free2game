@@ -14,5 +14,7 @@
 .gameCardContainer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(50px, 290px));
-    gap: 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
 }
