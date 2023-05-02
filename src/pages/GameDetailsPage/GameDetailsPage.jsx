@@ -30,7 +30,7 @@ const GameDetailsPage = () => {
 	});
 
 	useEffect(() => {
-		fetch('https://www.freetogame.com/api/game?id=450')
+		fetch('https://www.freetogame.com/api/game?id=452')
 			.then(res => res.json())
 			.then(data => {
 				console.log(data);
