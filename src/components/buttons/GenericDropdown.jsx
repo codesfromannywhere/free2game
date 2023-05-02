@@ -35,9 +35,9 @@ const GenericDropdown = ({
 				}}></div>
 			</div>
 			<div style={{display: isExpanded ? "block" : "none"}}>
-				{options.map((item) => {
+				{options.map((item, index) => {
 					return (
-						<label htmlFor={item.text}>
+						<label htmlFor={item.text} key={item.text + index}>
 							<input
 								type="checkbox"
 								id={item.text}
