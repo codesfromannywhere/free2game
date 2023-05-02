@@ -16,7 +16,7 @@ const TopGamesBrowserList = () => {
             })
     }, [])
     return (
-        <section>
+        <section className={style.gameCardSec}>
             <h2>Top 4 Games for Browser in June 2022</h2>
             <article className={style.gameCardContainer}>
                 {recentListData.map((game, i) => {
