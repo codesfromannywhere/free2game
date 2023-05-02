@@ -92,9 +92,9 @@
 			input[type="checkbox"]:checked:after {
 				content: "x";
 				font-size: 2.1rem;
-				line-height: 0.7rem;
 				color: $main_foreground_color;
-				// inset: 0;
+				left: 50%;
+				top: 50%;
 			}
 
 			&:hover {
