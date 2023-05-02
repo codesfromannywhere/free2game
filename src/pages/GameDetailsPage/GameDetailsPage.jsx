@@ -9,6 +9,7 @@ import GenericButton from '../../components/buttons/GenericButton';
 
 // _______________________________________________________________________
 
+
 const GameDetailsPage = () => {
 
 
