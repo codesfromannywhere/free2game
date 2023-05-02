@@ -12,6 +12,7 @@ const GenericDropdown = ({
 	...props
 }) => {
 	const [isExpanded, setIsExpanded] = useState(false);
+	const [genreSearch, setGenreSearch] = useState("");
 	return (
 		<div className={[style.genericDropdown, className].join(" ")}{...props}>
 			<div className={style.selectBox}
@@ -32,8 +33,11 @@ const GenericDropdown = ({
 					bottom: 0,
 				}}></div>
 			</div>
-			<div style={{ display: isExpanded ? "block" : "none" }} className={style.option}>
-				{options.map((item, index) => {
+			<div style={{ display: isExpanded ? "block" : "none" }} className={style.options}>
+				<input type="text" id={"genre-search"} onChange={(event) => {
+					setGenreSearch(event.target.value);
+				}}/>
+				{options.filter(item => item.text.includes(genreSearch)).map((item, index) => {
 					return (
 						<label htmlFor={item.text} key={item.text + index}>
 							<input
