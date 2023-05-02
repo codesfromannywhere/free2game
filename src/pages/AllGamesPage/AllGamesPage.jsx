@@ -1,12 +1,7 @@
 import React from 'react';
 import style from './AllGamesPage.module.scss';
-<<<<<<< HEAD
-
-import { useState, useEffect } from 'react';
-=======
 import { SearchTextContext } from '../../components/layout/Layout.jsx';
 import { useState, useEffect, useContext } from 'react';
->>>>>>> cf8000d5e5e05579580f0a6beb4a0837d08b6c6a
 import GenericDropdown from "../../components/buttons/GenericDropdown.jsx";
 
 const AllGamesPage = () => {
