@@ -6,15 +6,19 @@ import { useParams } from 'react-router-dom';
 // import Components
 import GenericLink from '../../components/buttons/GenericLink';
 import GenericButton from '../../components/buttons/GenericButton';
+import HeroSection from '../../components/HeroSection';
 
 // _______________________________________________________________________
 
 const GameDetailsPage = () => {
 
-	const name = useParams();
-	const gamesId = name.id;
+	const params = useParams();
+	const gamesId = params.id;
+
+	console.log(gamesId);
 
 	const [gameDetails, setGameDetails] = useState({
+		id: "loading",
 		title: "loading",
 		thumbnail: "loading",
 		description: "loading",
@@ -34,7 +38,7 @@ const GameDetailsPage = () => {
 	});
 
 	useEffect(() => {
-		fetch(`https://www.freetogame.com/api/game?id=451`)
+		fetch(`https://www.freetogame.com/api/game?id=${gamesId}`)
 			.then(res => res.json())
 			.then(data => {
 				console.log(data);
@@ -42,12 +46,10 @@ const GameDetailsPage = () => {
 			})
 	}, [])
 
-	// ${gamesId}
-
-
 	console.log(gameDetails);
 
-	// Format the Release Date__________________________________________________
+	// Format the Release Date (from 20??-??-?? to Month ??, 20??)__________________
+
 	const dateString = gameDetails.release_date;
 	const dateObj = new Date(dateString);
 
@@ -59,7 +61,7 @@ const GameDetailsPage = () => {
 	const year = dateObj.getFullYear();
 	const day = dateObj.getDate();
 
-	const fixedReleaseDate = `${monthNames[month]} ${day}, ${year}`
+	const fixedReleaseDate = `${monthNames[month]} ${day}, ${year}`;
 
 	console.log(fixedReleaseDate);
 
@@ -68,7 +70,7 @@ const GameDetailsPage = () => {
 	return (
 		<main className={style.gameDetailsPage}>
 			<section className={style.heroSection}>
-				<img src={gameDetails.screenshots[0].image} alt={`Screenshot of ${gameDetails.title}`} />
+				<HeroSection backgroundImage={gameDetails.screenshots[0].image} />
 			</section>
 			<h2>{gameDetails.title}</h2>
 			<article className={style.article}>
@@ -89,7 +91,7 @@ const GameDetailsPage = () => {
 			</section>
 			<article className={style.main_article_system}>
 				<article className={style.information}>
-					<h3>Additional Information</h3>
+					<h3 className={style.headline}>Additional Information</h3>
 					<p>Please note this free-to-play game may or may not offer optional in-game purchases.</p>
 					<div className={style.developer}>
 						<div>
@@ -105,7 +107,7 @@ const GameDetailsPage = () => {
 					</div>
 				</article>
 				<article className={style.requirements}>
-					<h3>Minimum System Requirements</h3>
+					<h3 className={style.headline}>Minimum System Requirements</h3>
 					<div className={style.system}>
 						<div className={style.left_Side}>
 							<h3>OS</h3>
