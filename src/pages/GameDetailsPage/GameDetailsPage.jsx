@@ -8,7 +8,6 @@ import GenericButton from '../../components/buttons/GenericButton';
 
 // _______________________________________________________________________
 
-
 const GameDetailsPage = () => {
 
 	const [gameDetails, setGameDetails] = useState({
