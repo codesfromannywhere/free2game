@@ -1,40 +1,65 @@
 @import "../../data/vars";
 
 .genericDropdown {
+	position: relative;
+	width: 12rem;
 	display: inline-block;
-	padding: 0 1rem 1rem 1rem;
 	color: $button_normal_foreground_color;
 	background: $button_normal_background_color;
 
 	outline: 2px solid transparent;
 
 	border: 2px solid $button_normal_border_color;
-	border-radius: 8px;
 
 	transition-duration: 200ms;
 	transition-property: outline-color, background-color;
 
-	&:hover {
-		color: $button_hovered_foreground_color;
-		background: $button_hovered_background_color;
-		outline: 2px solid $button_hovered_outline_color;
-	}
-
-	&:active {
-		background: $button_active_background_color;
-	}
+	user-select: none;
 
 	.selectBox {
-		display: inline-block;
+		display: block;
+		border-radius: inherit;
 		select {
 			height: 2rem;
-			background: none;
+			background: transparent;
 			padding: 0 1rem;
 			border: none;
+			width: 100%;
+		}
+		&:hover {
+			color: $button_hovered_foreground_color;
+			background: $button_hovered_background_color;
+			outline: 2px solid $button_hovered_outline_color;
+		}
+
+		&:active {
+			background: $button_active_background_color;
 		}
 	}
 
 	.option {
+		position: absolute;
+		left: 0;
+		right: 0;
+		background: rgba(0, 0, 0, 0.5);
+		label {
+			display: flex;
+			align-items: center;
+			padding: 0 1rem;
 
+			input[type="checkbox"] {
+				margin-right: 8px;
+			}
+
+			&:hover {
+				color: $button_hovered_foreground_color;
+				background: $button_hovered_background_color;
+				outline: 2px solid $button_hovered_outline_color;
+			}
+
+			&:active {
+				background: $button_active_background_color;
+			}
+		}
 	}
 }
