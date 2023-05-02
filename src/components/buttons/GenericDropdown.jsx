@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import style from './GenericDropdown.module.scss';
 
 const GenericDropdown = ({
 	children,
-	title = "title",
-	options = [
-
-	],
+	title="title",
+	singleOptionOnly= false,
+	options = [],
 	className,
+	onOptionChange,
+	optionType,
 	...props
 }) => {
 	const [isExpanded, setIsExpanded] = useState(false);
@@ -36,16 +37,20 @@ const GenericDropdown = ({
 					return (
 						<label htmlFor={item.text} key={item.text + index}>
 							<input
-								type="checkbox"
+								type={singleOptionOnly ? "radio" : "checkbox"}
+								name={title}
 								id={item.text}
-								onChange={(event) => { item.setChecked(event.target.value) }}
+								checked={item.state}
+								onChange={(event) => {
+									onOptionChange(index, event.target.checked, optionType);
+									setIsExpanded(false); //TODO: Change this to a Click Away listener because having to reopen the menu everytime you click an option is annoying.
+								}}
 							/>
 							{item.text}
 						</label>
 					);
 				})}
 			</div>
-
 		</div>
 	);
 };
