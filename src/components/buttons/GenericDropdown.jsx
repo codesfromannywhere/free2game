@@ -2,17 +2,14 @@ import React, {useState} from 'react';
 import style from './GenericDropdown.module.scss';
 
 const GenericDropdown = ({
-							children,
-							text="null",
-						 	options = [
-								{
-									text: "null",
-									setChecked: function(){}
-								}
-							],
-							className,
-							...props
-						 }) => {
+	children,
+	title="title",
+	options = [
+
+	],
+	className,
+	...props
+	 }) => {
 	const [isExpanded, setIsExpanded] = useState(false);
 	return (
 		<div className={[style.genericDropdown, className].join(" ")}{...props}>
@@ -24,7 +21,7 @@ const GenericDropdown = ({
 					 setIsExpanded(!isExpanded);
 				 }}>
 				<select>
-					<option>{text}</option>
+					<option>{title}</option>
 				</select>
 				<div className="overSelect" style={{
 					position: "absolute",
@@ -47,13 +44,7 @@ const GenericDropdown = ({
 							{item.text}
 						</label>
 					);
-
 				})}
-
-				<label htmlFor="two" style={{display: "flex"}}>
-					<input type="checkbox" id="two"/>Second checkbox</label>
-				<label htmlFor="three" style={{display: "flex"}}>
-					<input type="checkbox" id="three"/>Third checkbox</label>
 			</div>
 
 		</div>

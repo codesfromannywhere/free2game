@@ -26,10 +26,25 @@ const AllGamesPage = () => {
 	const [searchText] = useContext(SearchTextContext)
 	console.log(searchText);
 
+	const [option1, setOption1] = useState(false);
+	const [option2, setOption2] = useState(false);
+
+	const options = [
+		{
+			text: "option1",
+			setChecked: setOption1,
+			isChecked: option1
+		},
+		{
+			text: "option2",
+			setChecked: setOption2,
+			isChecked: option2
+		}
+	]
 
 	return (
 		<main className={style.allGamesPage}>
-			<GenericDropdown></GenericDropdown>
+			<GenericDropdown title={"select option"} options={options}/>
 			<section className={style.gridList}>
 				{allGames.map((elt) => {
 					if (elt.title.toLowerCase().includes(searchText.toLowerCase())) {
