@@ -17,6 +17,15 @@
     width: 9rem;
     text-align: center;
     margin-bottom: 1.5rem;
+
+    &:hover {
+        background-color: $card_hovered_background_color;
+    }
+
+    &:active,
+    &:focus {
+        outline: 2px solid $button_active_outline_color;
+    }
 }
 
 .filterTagContent {
@@ -42,6 +51,7 @@
         padding: 0.3rem 0.8rem;
         text-align: center;
     }
+
 }
 
 .PCGameCardContainer {
