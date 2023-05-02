@@ -26,25 +26,96 @@ const AllGamesPage = () => {
 	const [searchText] = useContext(SearchTextContext)
 	console.log(searchText);
 
-	const [option1, setOption1] = useState(false);
-	const [option2, setOption2] = useState(false);
+	// DROPDOWN
+	// -Platform-
+	const [allPlatforms, setAllPlatforms] = useState(false);
+	const [windows, setWindows] = useState(false);
+	const [browser, setBrowser] = useState(false);
 
-	const options = [
+	const optionsPlatform = [
 		{
-			text: "option1",
-			setChecked: setOption1,
-			isChecked: option1
+			text: "all Platforms",
+			setChecked: setAllPlatforms,
+			isChecked: allPlatforms
 		},
 		{
-			text: "option2",
-			setChecked: setOption2,
-			isChecked: option2
+			text: "Windows (PC)",
+			setChecked: setWindows,
+			isChecked: windows
+		},
+		{
+			text: "Browser (Web)",
+			setChecked: setBrowser,
+			isChecked: browser
 		}
 	]
 
+	// -Genre/Tag-
+	const [MMORPG, setMMORPG] = useState(false);
+	const [shooter, setShooter] = useState(false);
+	const [strategy, setStrategy] = useState(false);
+	const [moba, setMoba] = useState(false);
+
+	const optionsGenre = [
+		{
+			text: "MMORPG",
+			setChecked: setMMORPG,
+			isChecked: MMORPG
+		},
+		{
+			text: "Shooter",
+			setChecked: setShooter,
+			isChecked: shooter
+		},
+		{
+			text: "Strategy",
+			setChecked: setStrategy,
+			isChecked: strategy
+		},
+		{
+			text: "Moba",
+			setChecked: setMoba,
+			isChecked: moba
+		}
+	]
+
+	// -Genre/Tag-
+	const [relevance, setRelevance] = useState(false);
+	const [popularity, setPopulatity] = useState(false);
+	const [releaseDate, setReleaseDate] = useState(false);
+	const [alphabetical, setAlphabetical] = useState(false);
+
+	const optionsSort = [
+		{
+			text: "Relevance",
+			setChecked: setRelevance,
+			isChecked: relevance
+		},
+		{
+			text: "Popularity",
+			setChecked: setPopulatity,
+			isChecked: popularity
+		},
+		{
+			text: "Release Date",
+			setChecked: setReleaseDate,
+			isChecked: releaseDate
+		},
+		{
+			text: "Alphabetical",
+			setChecked: setAlphabetical,
+			isChecked: alphabetical
+		}
+	]
+
+
+
+
 	return (
 		<main className={style.allGamesPage}>
-			<GenericDropdown title={"select option"} options={options}/>
+			<GenericDropdown title={"PLATFORM"} options={optionsPlatform} />
+			<GenericDropdown title={"GENRE / TAG"} options={optionsGenre} />
+			<GenericDropdown title={"SORT BY"} options={optionsSort} />
 			<section className={style.gridList}>
 				{allGames.map((elt) => {
 					if (elt.title.toLowerCase().includes(searchText.toLowerCase())) {
