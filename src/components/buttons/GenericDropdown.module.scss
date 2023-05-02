@@ -7,19 +7,20 @@
 	color: $button_normal_foreground_color;
 	background: #FF4654;
 	border-radius: 15px;
-	outline: 2px solid transparent;
-	border: 2px solid $button_normal_border_color;
 
 
-	transition-duration: 200ms;
-	transition-property: outline-color,
-		background-color;
 
 	user-select: none;
 	margin: 6rem 3rem 0 3rem;
 
 	.selectBox {
 		display: block;
+		outline: 2px solid transparent;
+		border-radius: inherit;
+		border: 2px solid $button_normal_border_color;
+		transition-duration: 200ms;
+		transition-property: outline-color,
+			background-color;
 
 		select {
 			height: 2.5rem;
@@ -34,7 +35,7 @@
 		&:hover {
 			color: $button_hovered_foreground_color;
 			background: $button_hovered_background_color;
-			outline: 2px solid $button_hovered_outline_color;
+			// outline: 2px solid $button_hovered_outline_color;
 		}
 
 		&:active {
@@ -49,6 +50,7 @@
 
 		background: $filter_normal_background_color;
 		border-radius: 15px;
+		margin-top: .2rem;
 
 
 		label {
@@ -59,13 +61,30 @@
 			margin: 1rem 0.5rem;
 			border-radius: 12px;
 
-
 			input[type="checkbox"] {
 				margin-right: 10px;
 				height: 20px;
 				width: 20px;
-				border-style: none;
-				outline: 2px solid white;
+				border: 2px solid $main_foreground_color;
+				appearance: none;
+				-webkit-appearance: none;
+				outline: none;
+				cursor: pointer;
+				accent-color: $main_foreground_color;
+				-webkit-border-radius: 0;
+			}
+
+			input[type="checkbox"]:checked {
+				// background-color: grey;
+			}
+
+
+			input[type="checkbox"]:checked:after {
+				content: "x";
+				font-size: 2.1rem;
+				line-height: 0.7rem;
+				color: $main_foreground_color;
+				// inset: 0;
 			}
 
 			&:hover {
@@ -77,6 +96,7 @@
 			&:active {
 				background: $button_active_background_color;
 			}
+
 		}
 	}
 }
