@@ -5,6 +5,7 @@ import { SearchTextContext } from '../../components/layout/Layout.jsx';
 import { useState, useEffect, useContext } from 'react';
 import GenericDropdown from "../../components/buttons/GenericDropdown.jsx";
 import GameItem_EX from '../../components/experimental/GameItem_EX';
+import HeroSection from '../../components/HeroSection';
 
 
 
@@ -12,14 +13,7 @@ const AllGamesPage = () => {
 
 	const [allGames, setAllGames] = useState([]);
 
-	useEffect(() => {
-		// fetch(`https://www.freetogame.com/api/games?platform=${platform}&category=${genre}&sort-by=${sort}`)
-		// fetch('https://www.freetogame.com/api/games?platform=browser&category=mmorpg&sort-by=release-date')
-		fetch('https://www.freetogame.com/api/games')
-			.then((res) => res.json())
-			.then((data) => setAllGames(data))
-	}, [])
-	console.log(allGames);
+
 
 
 	// Suche nach Games in SearchBar
@@ -51,7 +45,7 @@ const AllGamesPage = () => {
 	]
 
 	// -Genre/Tag-
-	const [MMORPG, setMMORPG] = useState(false);
+	const [mmorpg, setMmorpg] = useState(false);
 	const [shooter, setShooter] = useState(false);
 	const [strategy, setStrategy] = useState(false);
 	const [moba, setMoba] = useState(false);
@@ -59,8 +53,8 @@ const AllGamesPage = () => {
 	const optionsGenre = [
 		{
 			text: "MMORPG",
-			setChecked: setMMORPG,
-			isChecked: MMORPG
+			setChecked: setMmorpg,
+			isChecked: mmorpg
 		},
 		{
 			text: "Shooter",
@@ -108,11 +102,25 @@ const AllGamesPage = () => {
 		}
 	]
 
+	useEffect(() => {
+		let url = 'https://www.freetogame.com/api/games';
 
+		if (windows) {
+			url += "?platform=pc"
+		}
 
+		console.log(url);
+		fetch(url)
+			.then((res) => res.json())
+			.then((data) => {
+				setAllGames(data)
+			})
+	}, [])
+	console.log(allGames);
 
 	return (
 		<main className={style.allGamesPage}>
+			<HeroSection title="ALL GAMES" backgroundImage={"https://www.freetogame.com/g/137/Metal-War-Online-3.jpg"} />
 			<GenericDropdown title={"PLATFORM"} options={optionsPlatform} />
 			<GenericDropdown title={"GENRE / TAG"} options={optionsGenre} />
 			<GenericDropdown title={"SORT BY"} options={optionsSort} />
@@ -139,92 +147,3 @@ const AllGamesPage = () => {
 };
 
 export default AllGamesPage;
-
-
-
-// _______________________________________________
-// // 1. Versuch Dropdown-Menu
-
-// import Select from 'react-select';
-
-// const optionsPlatform = [
-// 	{ value: 'Web Browser' || 'PC (Windows)', label: 'all Platforms' },
-// 	{ value: 'PC (Windows)', label: 'Windows (PC)' },
-// 	{ value: 'Web Browser', label: 'Browser (Web)' },
-// ]
-// const [selectedOptionsPlatform, setSelectedOptionsPlatform] = useState([])
-
-// _______________
-// const MultiValue = ({ data, removeValue }) => {
-// 	return (
-// 		<div className="multi-value">
-// 			{data.label}
-// 			<span className="multi-value-remove" onClick={() => removeValue(data)}>
-// 				&times;
-// 			</span>
-// 		</div>
-// 	);
-// };
-
-// ___________________________
-// im return:
-{/* <Select
-				isMulti={true}
-				options={optionsPlatform}
-				value={selectedOptionsPlatform}
-				onChange={(selected) => setSelectedOptionsPlatform(selected)}
-				components={{ MultiValue }}
-			/> */}
-
-// ============================================	
-// //  2. Versuch 
-
-// import GenericDropdown from '../../components/buttons/GenericDropdown';
-
-// const [savedFilters, setSavedFilter] = useState([]);
-
-{/* <GenericDropdown
-				name="test">
-				<option value={"Platform"}>PLATFORM</option>
-				<option><input type="checkbox" value="All Platforms"/></option>
-				<option>Windows (PC)</option>
-				<option>Browser (Web)</option>
-			</GenericDropdown>
-			<GenericDropdown
-				name="test">
-				<option value={"Genre/Tag"}>GENRE/TAG</option>
-				<option>MMORPG</option>
-				<option>Shooter</option>
-				<option>Strategy</option>
-				<option>Moba</option>
-			</GenericDropdown>
-			<GenericDropdown
-				name="test">
-				<option value={"Sort by"}>SORT BY</option>
-				<option>Relevance</option>
-				<option>Popularity</option>
-				<option>Release Date</option>
-				<option>Alphabetical</option>
-			</GenericDropdown> */}
-
-
-
-// ============================================	
-// FILTER + SORTIERUNG NACH ANFANGSBUCHSTABE:
-// ============================================	
-			// {allGames
-			// 	.filter((game) =>
-			// 		game.title.toLowerCase().startsWith(searchText.toLowerCase())
-			// 	)
-			// 	.sort((gameA, gameB) =>
-			// 		gameA.title.toLowerCase() > gameB.title.toLowerCase() ? 1 : -1
-			// 	)
-			// 	.map((game) => (
-			// 		<GameItem_EX
-			// 			key={game.id}
-			// 			img={game.thumbnail}
-			// 			title={game.title}
-			// 			platform={game.platform}
-			// 			genre={game.genre}
-			// 		/>
-			// 	))}
