@@ -5,8 +5,8 @@ import { useParams } from 'react-router-dom';
 
 // import Components
 import GenericLink from '../../components/buttons/GenericLink';
-import GenericButton from '../../components/buttons/GenericButton';
 import HeroSection from '../../components/HeroSection';
+import FilterTag from '../../components/FilterTag';
 
 // _______________________________________________________________________
 
@@ -21,6 +21,7 @@ const GameDetailsPage = () => {
 
 	const [gameDetails, setGameDetails] = useState({
 		id: "loading",
+		genre: "loading",
 		title: "loading",
 		thumbnail: "loading",
 		description: "loading",
@@ -94,7 +95,7 @@ const GameDetailsPage = () => {
 				<div className={style.thumbnail_button_article}>
 					<img src={gameDetails.thumbnail} alt={`thumbnail ${gameDetails.title}`} />
 					<h3>Platform: {gameDetails.platform}</h3>
-					<GenericButton className={style.Game_tag}>Action RPG</GenericButton>
+					<FilterTag className={style.Game_tag} text={gameDetails.genre} />
 					<GenericLink className={style.Link_playnow} to={gameDetails.freetogame_profile_url}>PLAY NOW</GenericLink>
 				</div>
 				<div className={style.about_text_div}>
