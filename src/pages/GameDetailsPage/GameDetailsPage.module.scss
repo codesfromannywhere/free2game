@@ -5,7 +5,7 @@
 	}
 
 	p {
-		font-size: 1rem;
+		font-size: 1.1rem;
 	}
 
 	button,
@@ -23,14 +23,14 @@
 	.heroSection {
 		max-width: 100%;
 		background-size: cover;
+		height: auto;
+
 	}
 
 	//___________ Article with Title & Thumbnail ______________________
 
 	.article {
 		display: flex;
-		justify-content: center;
-		gap: 10rem;
 	}
 
 	.thumbnail_button_article {
@@ -94,16 +94,10 @@
 		gap: 3.5rem;
 		margin-left: 5rem;
 
-		img:nth-of-type(1) {
-			width: 43rem;
-		}
-
-		img:nth-of-type(2) {
-			width: 43rem;
+		img {
+			max-width: 50rem;
 		}
 	}
-
-
 
 	// _________________ Article - Information & Requirements _______________
 
@@ -133,7 +127,7 @@
 				h3 {
 					margin-bottom: 1.7rem;
 					line-height: 1.35rem;
-					font-size: 1rem;
+					font-size: 1.1rem;
 				}
 
 				h3:nth-of-type(1) {
@@ -150,14 +144,14 @@
 		// -------- System Requirements Block -----------
 
 		.requirements_article {
-			padding-left: 13rem;
+			padding-left: 20rem;
 
 			.headline {
 				font-size: 1.5rem;
 			}
 
 			h3 {
-				font-size: 1rem;
+				font-size: 1.2rem;
 			}
 
 			p {
