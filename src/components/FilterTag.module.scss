@@ -1,4 +1,7 @@
 @import "../data/vars";
+
+
+
 .filterTag {
 	display: inline-flex;
 	align-items: center;
@@ -8,23 +11,28 @@
 	color: $button_normal_foreground_color;
 	background: $button_normal_background_color;
 
-	outline: 2px solid transparent;
+	outline: 1px solid rgb(250, 100, 100);
 
 	border: 2px solid $button_normal_border_color;
-	border-radius: 999px;
-	padding: 0.25rem 0.85rem;
+	border-radius: 12px;
+	padding: 0.35rem 0.8rem;
 
 	transition-duration: 200ms;
 	transition-property: outline-color, background-color;
 
+	margin-right: 1rem;
+
 	p {
-		font-size: 0.75rem;
+		font-size: 0.9rem;
+		font-family: Oswald;
+		font-weight: 700;
 	}
 
 	button {
 		filter: invert(100%);
 		width: 20px;
 		height: 20px;
+
 		img {
 			aspect-ratio: 1/1;
 			width: 100%;
