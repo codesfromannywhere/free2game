@@ -1,13 +1,7 @@
-// ELEMENT Style_____________________________________________________ 
-
 .gameDetailsPage {
 
 	img {
 		border-radius: 24px;
-	}
-
-	h2 {
-		font-size: 3rem;
 	}
 
 	p {
@@ -21,11 +15,19 @@
 
 	h2 {
 		margin: 6rem 0 3rem 5rem;
+		font-size: 3rem;
 	}
 
-	// .heroSection {
-	// 	width: 80rem;
-	// }
+	// __________ Hero-Section _________________________________________
+
+	.heroSection {
+		max-width: 100%;
+		background-size: cover;
+		height: auto;
+		aspect-ratio: 21 / 9;
+	}
+
+	//___________ Article with Title & Thumbnail ______________________
 
 	.article {
 		display: flex;
@@ -33,7 +35,7 @@
 		gap: 9rem;
 	}
 
-	.left_div {
+	.thumbnail_button_article {
 		width: 50%;
 		margin-left: 5rem;
 
@@ -43,14 +45,14 @@
 
 		h3 {
 			margin: 2.25rem 0 0 2rem;
-
 		}
 
-		// BUTTON Style______________________________________________
+		// BUTTON Style --------
 
 		.Game_tag {
 			margin: 2rem 0 3rem 2rem;
 			line-height: 1.5rem;
+			font-weight: 600;
 			padding: 0.375rem 0.75rem;
 			border: 1px solid #FF4654;
 			border-radius: 0.9rem;
@@ -69,7 +71,9 @@
 		}
 	}
 
-	.right_div {
+	// ---------------------
+
+	.about_text_div {
 		width: 50%;
 		margin-right: 12.5rem;
 
@@ -82,32 +86,42 @@
 		}
 	}
 
+	// _________________ Screenshot-Section ____________________________
+
 	.screenshot_section {
 		display: flex;
 		justify-content: center;
 		gap: 1.5rem;
-		margin-right: 5.5rem;
+		// margin-right: 5.5rem;
 
-		img {
-			width: 40rem;
-			height: auto;
+		img:nth-of-type(1) {
+			width: 36rem;
+			margin-left: auto;
+		}
+
+		img:nth-of-type(2) {
+			width: 36rem;
+			margin-right: auto;
 		}
 	}
 
+	// _________________ Article - Information & Requirements _______________
+
 	.main_article_system {
-		margin-right: 11rem;
+		// margin-right: 11rem;
+		margin: 0 auto;
 		display: flex;
-		justify-content: center;
-		gap: 7rem;
 
 		img {
 			width: 37rem;
 			margin-bottom: 6rem;
 		}
 
+		// ----- Additional Information-----------
+
 		.information {
-			width: 30rem;
-			padding-left: 8rem;
+			width: 40rem;
+			padding-left: 6rem;
 
 			h3:nth-of-type(1) {
 				margin: 6rem 0 2.25rem 0;
@@ -117,7 +131,7 @@
 				font-size: 1.5rem;
 			}
 
-			.developer {
+			.developer_block {
 				margin-top: 1.5rem;
 				display: flex;
 				justify-content: flex-start;
@@ -140,8 +154,10 @@
 			}
 		}
 
-		.requirements {
-			width: 50rem;
+		// -------- System Requirements Block -----------
+
+		.requirements_article {
+			// width: 50rem;
 			padding-left: 12rem;
 
 			.headline {
@@ -158,15 +174,14 @@
 
 			h3:nth-of-type(1) {
 				margin-top: 6rem;
-
 			}
 
-			.system {
+			.system_block_div {
 				display: flex;
 				justify-content: flex-start;
 				gap: 4rem;
 
-				.left_Side {
+				.os_memory_storage {
 
 					h3:nth-of-type(1) {
 						margin-top: 2.25rem;
@@ -181,18 +196,17 @@
 					}
 				}
 
-				.right_Side {
-					width: 25rem;
-					// padding-left: 5rem;
+				.processor_graphics_notes {
+
+					margin-right: 6rem;
 
 					h3 {
-						margin-top: 1.5rem;
-						margin-bottom: 0.75rem;
+						margin: 1.5rem 0 0.75rem 0;
 					}
 
 					h3:nth-of-type(1) {
-						margin-top: 2.25rem;
-						margin-bottom: 0.75rem;
+						margin: 2.25rem 0 0.75rem;
+
 					}
 
 					h3:nth-of-type(3) {

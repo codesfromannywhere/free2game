@@ -13,9 +13,7 @@ import HeroSection from '../../components/HeroSection';
 const GameDetailsPage = () => {
 
 	const params = useParams();
-	const gamesId = params.id;
-
-	console.log(gamesId);
+	const gameId = params.id;
 
 	const [gameDetails, setGameDetails] = useState({
 		id: "loading",
@@ -38,15 +36,50 @@ const GameDetailsPage = () => {
 	});
 
 	useEffect(() => {
-		fetch(`https://www.freetogame.com/api/game?id=${gamesId}`)
+		fetch(`https://www.freetogame.com/api/game?id=${gameId}`)
 			.then(res => res.json())
 			.then(data => {
-				console.log(data);
+				// console.log(data);
 				setGameDetails(data);
 			})
-	}, [])
+	}, [gameId])
 
 	console.log(gameDetails);
+
+
+
+	// adjust fetch to get for every games the specific details
+	// useEffect(() => {
+	// 	if (gameDetails.screenshots[0].image === "loading") {
+	// 		fetch(`https://www.freetogame.com/api/games?id=${gameId}`)
+	// 			.then(res => res.json())
+	// 			.then(data => {
+	// 				// console.log(data);
+	// 				setGameDetails(data);
+	// 			});
+	// 	}
+	// }, [gameDetails.screenshots]);
+
+
+	// 	return gameDetails.short_description
+	// } if (gameDetails.screenshots === null) {
+	// 	return null
+	// } if (gameDetails.minimum_system_requirements === null) {
+	// 	return null
+	// } else
+
+	// function fixMissingDetails() {
+	// 	if (gameDetails.screenshots.length === 0) {
+	// 		return null;
+	// 	} else if (gameDetails.minimum_system_requirements === null) {
+	// 		return null
+	// 	} else if (gameDetails.description === null) {
+	// 		return gameDetails.short_description
+	// 	}
+	// }
+	// fixMissingDetails();
+
+	// console.log(gameDetails.minimum_system_requirements)
 
 	// Format the Release Date (from 20??-??-?? to Month ??, 20??)__________________
 
@@ -63,8 +96,6 @@ const GameDetailsPage = () => {
 
 	const fixedReleaseDate = `${monthNames[month]} ${day}, ${year}`;
 
-	console.log(fixedReleaseDate);
-
 	// RETURN_______________________________________________________________________
 
 	return (
@@ -72,15 +103,15 @@ const GameDetailsPage = () => {
 			<section className={style.heroSection}>
 				<HeroSection backgroundImage={gameDetails.screenshots[0].image} />
 			</section>
-			<h2>{gameDetails.title}</h2>
+			<h2>{gameDetails.title.toUpperCase()}</h2>
 			<article className={style.article}>
-				<div className={style.left_div}>
+				<div className={style.thumbnail_button_article}>
 					<img src={gameDetails.thumbnail} alt={`thumbnail ${gameDetails.title}`} />
 					<h3>Platform: {gameDetails.platform}</h3>
 					<GenericButton className={style.Game_tag}>Action RPG</GenericButton>
 					<GenericLink className={style.Link_playnow} to={gameDetails.freetogame_profile_url}>PLAY NOW</GenericLink>
 				</div>
-				<div className={style.right_div}>
+				<div className={style.about_text_div}>
 					<h3>About</h3>
 					<p>{gameDetails.description}</p>
 				</div>
@@ -93,7 +124,7 @@ const GameDetailsPage = () => {
 				<article className={style.information}>
 					<h3 className={style.headline}>Additional Information</h3>
 					<p>Please note this free-to-play game may or may not offer optional in-game purchases.</p>
-					<div className={style.developer}>
+					<div className={style.developer_block}>
 						<div>
 							<h3>Developer</h3>
 							<h3>Publisher</h3>
@@ -106,10 +137,10 @@ const GameDetailsPage = () => {
 						</div>
 					</div>
 				</article>
-				<article className={style.requirements}>
+				<article className={style.requirements_article}>
 					<h3 className={style.headline}>Minimum System Requirements</h3>
-					<div className={style.system}>
-						<div className={style.left_Side}>
+					<div className={style.system_block_div}>
+						<div className={style.os_memory_storage}>
 							<h3>OS</h3>
 							<p>{gameDetails.minimum_system_requirements.os}</p>
 							<h3>Memory</h3>
@@ -117,7 +148,7 @@ const GameDetailsPage = () => {
 							<h3>Storage</h3>
 							<p>{gameDetails.minimum_system_requirements.storage}</p>
 						</div>
-						<div className={style.right_Side}>
+						<div className={style.processor_graphics_notes}>
 							<h3>Processor</h3>
 							<p>{gameDetails.minimum_system_requirements.processor}</p>
 							<h3>Graphics</h3>
@@ -131,5 +162,26 @@ const GameDetailsPage = () => {
 		</main>
 	);
 };
+
+
+// _____________________ Main Keys ________________________________
+// "id": 540,
+// "title": "Overwatch 2",
+// "thumbnail": "https://www.freetogame.com/g/540/thumbnail.jpg",
+// "short_description": "A hero-focused first-person team shooter from Blizzard Entertainment.",
+// "game_url": "https://www.freetogame.com/open/overwatch-2",
+// "genre": "Shooter",
+// "platform": "PC (Windows)",
+// "publisher": "Activision Blizzard",
+// "developer": "Blizzard Entertainment",
+// "release_date": "2022-10-04",
+// "freetogame_profile_url": "https://www.freetogame.com/overwatch-2"
+// },
+
+// _____________________Additional Keys_____________________________
+// "status": "Live",
+// "description": "Call of Duty: Warzone is both a standalone free-to-play battle royale and modes accessible via Call of Duty: Modern Warfare. Warzone features two modes — the general 150-player battle royle, and “Plunder”. The latter mode is described as a “race to deposit the most Cash”. In both modes players can both earn and loot cash to be used when purchasing in-match equipment, field upgrades, and more. Both cash and XP are earned in a variety of ways, including completing contracts.\r\n\r\nAn interesting feature of the game is one that allows players who have been killed in a match to rejoin it by winning a 1v1 match against other felled players in the Gulag.\r\n\r\nOf course, being a battle royale, the game does offer a battle pass. The pass offers players new weapons, playable characters, Call of Duty points, blueprints, and more. Players can also earn plenty of new items by completing objectives offered with the pass.",
+// "screenshots": []
+// "minimum_system_requirements": {}
 
 export default GameDetailsPage;
