@@ -49,7 +49,6 @@ const GenericDropdown = ({
 									checked={item.state}
 									onChange={(event) => {
 										onOptionChange(index, event.target.checked, optionType);
-										setIsExpanded(false); //TODO: Change this to a Click Away listener because having to reopen the menu everytime you click an option is annoying.
 									}}
 								/>
 								{item.text}
