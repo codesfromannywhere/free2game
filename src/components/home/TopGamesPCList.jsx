@@ -30,7 +30,9 @@ const TopGamesPCList = () => {
 
                     <div className={style.gameTitelInfo}>
                         <h3>{recentListData[0]?.title.toUpperCase()}</h3>
-                        <GenericLink to={`/game/${recentListData[0]?.id}`} className={style.buttonReadMore}>READ MORE</GenericLink>
+                        <GenericLink to={`/game/${recentListData[0]?.id}`} className={style.buttonReadMore} onClick={() => {
+                            window.scroll(0, 0);
+                        }}>READ MORE</GenericLink>
 
                         <div className={style.filterTagContent}>
                             <FilterTag img={windowsIcon} alt="windows Icon" />
@@ -47,7 +49,9 @@ const TopGamesPCList = () => {
                     <p className={style.numberSmaller}>2</p>
                     <div>
                         <h3>{recentListData[1]?.title}</h3>
-                        <GenericLink to={`/game/${recentListData[1]?.id}`} className={style.buttonReadMore}>READ MORE</GenericLink>
+                        <GenericLink to={`/game/${recentListData[1]?.id}`} className={style.buttonReadMore} onClick={() => {
+                            window.scroll(0, 0);
+                        }}>READ MORE</GenericLink>
 
                         <div className={style.filterTagContent}>
                             <FilterTag img={windowsIcon} alt="windows Icon" />
@@ -61,7 +65,9 @@ const TopGamesPCList = () => {
                     <p className={style.numberSmaller}>3</p>
                     <div>
                         <h3>{recentListData[2]?.title}</h3>
-                        <GenericLink to={`/game/${recentListData[2]?.id}`} className={style.buttonReadMore}>READ MORE</GenericLink>
+                        <GenericLink to={`/game/${recentListData[2]?.id}`} className={style.buttonReadMore} onClick={() => {
+                            window.scroll(0, 0);
+                        }}>READ MORE</GenericLink>
 
                         <div className={style.filterTagContent}>
                             <FilterTag img={windowsIcon} alt="windows Icon" />
@@ -75,7 +81,9 @@ const TopGamesPCList = () => {
                     <p className={style.numberSmaller}>4</p>
                     <div>
                         <h3>{recentListData[3]?.title}</h3>
-                        <GenericLink to={`/game/${recentListData[3]?.id}`} className={style.buttonReadMore}>READ MORE</GenericLink>
+                        <GenericLink to={`/game/${recentListData[3]?.id}`} className={style.buttonReadMore} onClick={() => {
+                            window.scroll(0, 0);
+                        }}>READ MORE</GenericLink>
 
                         <div className={style.filterTagContent}>
                             <FilterTag img={windowsIcon} alt="windows Icon" />

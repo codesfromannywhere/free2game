@@ -13,11 +13,17 @@ const HomePage = () => {
 		<main className={style.homePage}>
 			<HeroSection title="FIND & TRACK THE BEST FREE-TO-PLAY GAMES!" backgroundImage={`https://www.freetogame.com/g/452/Call-of-Duty-Warzone-1.jpg`} />
 			<HomeRecentList />
-			<GenericLink className={style.buttonReadMore} to={"recently-added"}>SHOW MORE</GenericLink >
+			<GenericLink className={style.buttonReadMore} to={"recently-added"} onClick={() => {
+				window.scroll(0, 0);
+			}}>SHOW MORE</GenericLink >
 			<TopGamesPCList />
-			<GenericLink className={style.buttonReadMore} to={"/all-games"}>SHOW MORE</GenericLink>
+			<GenericLink className={style.buttonReadMore} to={"/all-games"} onClick={() => {
+				window.scroll(0, 0);
+			}}>SHOW MORE</GenericLink>
 			<TopGamesBrowserList />
-			<GenericLink className={style.buttonReadMore} to={"/all-games"}>SHOW MORE</GenericLink>
+			<GenericLink className={style.buttonReadMore} to={"/all-games"} onClick={() => {
+				window.scroll(0, 0);
+			}}>SHOW MORE</GenericLink>
 		</main>
 	);
 };
