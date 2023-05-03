@@ -128,7 +128,7 @@ const AllGamesPage = () => {
 			element = (
 				<section className={style.gridList}>
 					{filteredGames.map((elt) => {
-						if(!elt.title.toLowerCase().includes(searchText)){
+						if (!elt.title.toLowerCase().includes(searchText)) {
 							return;
 						}
 						return (
@@ -147,7 +147,7 @@ const AllGamesPage = () => {
 			)
 		} else {
 			element = (
-				<section style={style.oops}>
+				<section className={style.oops}>
 					<h2>
 						Oops!
 					</h2>
