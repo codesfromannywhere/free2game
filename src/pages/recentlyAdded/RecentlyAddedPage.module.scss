@@ -1,8 +1,9 @@
 .recentlyAddedPage {
     .gridList {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(50px, 290px));
-        margin: 0 3rem;
+        display: flex;
+        flex-wrap: wrap;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 350px));
+        margin: 0 6rem;
         justify-content: space-between;
         gap: 1rem;
         padding-top: 6rem;
