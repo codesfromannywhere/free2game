@@ -1,4 +1,5 @@
 .allGamesPage {
+    min-height: 120vh;
     .gridList {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(50px, 290px));
@@ -7,5 +8,9 @@
         gap: 1rem;
         row-gap: 2rem;
         padding-top: 6rem;
+    }
+
+    .oops {
+        // TODO: Add Styling for the case of no games being found
     }
 }
