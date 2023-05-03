@@ -35,7 +35,7 @@ const GenericDropdown = ({
 						bottom: 0,
 					}}></div>
 				</div>
-				<div style={{ display: isExpanded ? "block" : "none" }} className={style.options}>
+				<div style={{ display: isExpanded ? "flex" : "none" }} className={style.options}>
 					<input type="text" id={"genre-search"} onChange={(event) => {
 						setGenreSearch(event.target.value);
 					}}/>

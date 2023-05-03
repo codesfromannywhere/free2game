@@ -14,7 +14,7 @@
 	}
 
 	h2 {
-		margin: 6rem 0 3rem 5rem;
+		margin: 4rem 0 3rem 5rem;
 		font-size: 3rem;
 	}
 
@@ -23,8 +23,6 @@
 	.heroSection {
 		max-width: 100%;
 		background-size: cover;
-		// height: auto;
-		// aspect-ratio: 16 / 9;
 	}
 
 	//___________ Article with Title & Thumbnail ______________________
@@ -32,7 +30,7 @@
 	.article {
 		display: flex;
 		justify-content: center;
-		gap: 9rem;
+		gap: 10rem;
 	}
 
 	.thumbnail_button_article {
@@ -80,6 +78,7 @@
 
 		h3 {
 			margin-bottom: 2.25rem;
+			font-size: 1.5rem;
 		}
 
 		p {
@@ -91,18 +90,16 @@
 
 	.screenshot_section {
 		display: flex;
-		justify-content: center;
+		justify-content: flex-start;
 		gap: 3.5rem;
-		// margin-right: 5.5rem;
+		margin-left: 5rem;
 
 		img:nth-of-type(1) {
 			width: 43rem;
-			margin-left: auto;
 		}
 
 		img:nth-of-type(2) {
 			width: 43rem;
-			margin-right: auto;
 		}
 	}
 
