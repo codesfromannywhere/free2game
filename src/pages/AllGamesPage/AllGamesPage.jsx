@@ -1,11 +1,11 @@
-import React, {useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react';
+import React, { useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import style from './AllGamesPage.module.scss';
 
-import {SearchTextContext} from '../../components/layout/Layout.jsx';
+import { SearchTextContext } from '../../components/layout/Layout.jsx';
 import GenericDropdown from "../../components/buttons/GenericDropdown.jsx";
 import GameItem_EX from '../../components/experimental/GameItem_EX';
 import HeroSection from '../../components/HeroSection';
-import {platforms, sorting, tags} from "../../data/tagData.jsx";
+import { platforms, sorting, tags } from "../../data/tagData.jsx";
 
 const AllGamesPage = () => {
 
@@ -81,15 +81,15 @@ const AllGamesPage = () => {
 		let url = 'https://www.freetogame.com/api/games';
 
 		fetch(url)
-		.then((res) => res.json())
-		.then((data) => {
-			setAllGames(data);
-		});
+			.then((res) => res.json())
+			.then((data) => {
+				setAllGames(data);
+			});
 	}, []);
 
 	useEffect(() => {
 		const bUseFetch = true;
-		if(bUseFetch){
+		if (bUseFetch) {
 			let platform = platformOptionsRef.current.find(item => item.state === true)?.text || "all";
 			let selectedGenres = genreOptionsRef.current.filter(item => item.state === true).map(item => item.text);
 			let sort = sortOptions.find(item => item.state)?.text;
@@ -102,37 +102,37 @@ const AllGamesPage = () => {
 			console.log(sort);
 
 			fetch(url)
-			.then((res) => res.json())
-			.then((data) => {
-				if (searchText === '') {
-					setFilteredGames(data);
-				} else {
-					setFilteredGames(data.filter((a) => a.title.includes(searchText)));
-				}
-			});
+				.then((res) => res.json())
+				.then((data) => {
+					if (searchText === '') {
+						setFilteredGames(data);
+					} else {
+						setFilteredGames(data.filter((a) => a.title.includes(searchText)));
+					}
+				});
 		} else {
 			setFilteredGames(allGames.filter((a) => {
 				const platformMatch = platformOptionsRef.current.some(item => item.state === true && a.platform === item.text);
 				const genreMatch = genreOptionsRef.current.some(item => item.state === true && a.genre.toLowerCase() === item.text);
 
 				if (searchText === '' && !platformMatch && !genreMatch) return true
-				else {return a.title.includes(searchText) && (platformMatch || genreMatch)}
+				else { return a.title.includes(searchText) && (platformMatch || genreMatch) }
 			}));
 		}
 	}, [allGames, platformStates, sortStates, genreStates, searchText]);
 
 	return (
 		<main className={style.allGamesPage}>
-			<HeroSection title="ALL GAMES" backgroundImage={"https://www.freetogame.com/g/137/Metal-War-Online-3.jpg"}/>
-			<GenericDropdown title={"PLATFORM"} options={platformOptions} onOptionChange={handleOptionChange} optionType={"platform"}/>
+			<HeroSection title="ALL GAMES" backgroundImage={"https://www.freetogame.com/g/137/Metal-War-Online-3.jpg"} />
+			<GenericDropdown title={"PLATFORM"} options={platformOptions} onOptionChange={handleOptionChange} optionType={"platform"} />
 			<GenericDropdown title={"GENRE / TAG"} options={genreOptions} onOptionChange={handleOptionChange} optionType={"genre"} />
-			<GenericDropdown title={"SORT BY"} options={sortOptions} onOptionChange={handleOptionChange} optionType={"sort"}/>
+			<GenericDropdown title={"SORT BY"} options={sortOptions} onOptionChange={handleOptionChange} optionType={"sort"} />
 			<section className={style.gridList}>
 				{filteredGames.map((elt) => {
 					return (
 						<GameItem_EX
-							//TODO: @Steffi: Füge die id hier hinzu. Sonst funktioniert der read more button nicht
 							key={elt.id}
+							id={elt.id}
 							img={elt.thumbnail}
 							title={elt.title}
 							platform={elt.platform}
