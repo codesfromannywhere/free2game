@@ -9,7 +9,7 @@
 	border-radius: 15px;
 
 	user-select: none;
-	margin: 6rem 3rem 0 3rem;
+	margin: 3rem 3rem 0 3rem;
 
 	.selectBox {
 		display: block;
@@ -47,6 +47,22 @@
 		}
 	}
 
+	::-webkit-scrollbar {
+		width: 7px;
+		margin-left: 10px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: $filter_normal_background_color;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: $card_hovered_border_color;
+		border-radius: 24px;
+	}
+
+
+
 	.options {
 		position: absolute;
 		left: 0;
@@ -65,15 +81,16 @@
 			background-color: rgba(255, 255, 255, 0.02);
 			background-repeat: no-repeat;
 			background-position: 0.75rem;
-			background-size: 1.25rem;
+			background-size: 1rem;
 			border-radius: 12px;
 			border: 2px solid $button_normal_border_color;
 			outline: 2px solid transparent;
 			height: 2.5rem;
-			padding: 0.7rem 0.2rem;
-			margin: 1rem 0.5rem 0 0.5rem;
+			padding: 1rem 0.25rem 1rem 2.5rem;
+			margin: 1rem 0.5rem 0.75rem 0.5rem;
 
-			font-size: 1.2rem;
+			font-size: 1rem;
+			line-height: 1.2rem;
 
 			transition-property: background-color, outline-color;
 			transition-duration: 200ms;
@@ -93,7 +110,7 @@
 			align-items: center;
 			padding: 0.7rem 1rem;
 			background-color: $filter_options_background_color;
-			margin: 1rem 0.5rem;
+			margin: 0.75rem 0.5rem;
 			border-radius: 12px;
 
 			input[type="checkbox"] {
@@ -114,9 +131,6 @@
 				content: "x";
 				font-size: 2rem;
 				line-height: .7rem;
-				color: $main_foreground_color;
-				// left: 2rem;
-				// top: 20rem;
 			}
 
 			&:hover {
@@ -128,9 +142,6 @@
 			&:active {
 				background: $button_active_background_color;
 			}
-
-
-
 		}
 	}
 }
