@@ -76,6 +76,8 @@
 
 		overflow-y: auto;
 
+		z-index: 4;
+
 		input[type="text"] {
 			background-image: url("../../assets/images/icon_search.svg");
 			background-color: rgba(255, 255, 255, 0.02);
@@ -114,21 +116,25 @@
 			border-radius: 12px;
 
 			input[type="checkbox"] {
-				margin-right: 10px;
-				height: 20px;
-				width: 20px;
-				border: 2px solid $main_foreground_color;
+				margin-right: 15px;
+				height: 15px;
+				width: 15px;
+				outline: 2px solid $main_foreground_color;
+				outline-offset: 2px;
 				appearance: none;
 				-webkit-appearance: none;
-				outline: none;
+
 				cursor: pointer;
 				accent-color: $main_foreground_color;
 				-webkit-border-radius: 0;
 			}
 
+			input[type="checkbox"]:checked {
+				background: white;
+			}
 
 			input[type="checkbox"]:checked:after {
-				content: "x";
+				content: "";
 				font-size: 2rem;
 				line-height: .7rem;
 			}
@@ -137,6 +143,7 @@
 				color: $button_hovered_foreground_color;
 				background: $button_hovered_background_color;
 				outline: 2px solid $button_hovered_outline_color;
+
 			}
 
 			&:active {

@@ -118,6 +118,48 @@ const AllGamesPage = () => {
 		}
 	}, [allGames, platformStates, sortStates, genreStates, searchText]);
 
+	const [gamesResult, setGamesResult] = useState();
+
+	useEffect(() => {
+		let element;
+		if (filteredGames.length >= 0 && filteredGames.some((item) => {
+			return item.title.toLowerCase().includes(searchText);
+		})) {
+			element = (
+				<section className={style.gridList}>
+					{filteredGames.map((elt) => {
+						if(!elt.title.toLowerCase().includes(searchText)){
+							return;
+						}
+						return (
+							<GameItem_EX
+								key={elt.id}
+								id={elt.id}
+								img={elt.thumbnail}
+								title={elt.title}
+								platform={elt.platform}
+								genre={elt.genre}
+							/>
+						);
+
+					})}
+				</section>
+			)
+		} else {
+			element = (
+				<section style={style.oops}>
+					<h2>
+						Oops!
+					</h2>
+					<h3>
+						We didn't find anything! Please try removing some filters.
+					</h3>
+				</section>
+			)
+		}
+		setGamesResult(element)
+	}, [filteredGames])
+
 	return (
 		<main className={style.allGamesPage}>
 			<HeroSection title="ALL GAMES" backgroundImage={"https://www.freetogame.com/g/137/Metal-War-Online-3.jpg"} />
@@ -140,24 +182,7 @@ const AllGamesPage = () => {
 					}
 				})}
 			</section>
-			<section className={style.gridList}>
-				{filteredGames.map((elt) => {
-					if (!elt.title.toLowerCase().includes(searchText)) {
-						return;
-					}
-					return (
-						<GameItem_EX
-							key={elt.id}
-							id={elt.id}
-							img={elt.thumbnail}
-							title={elt.title}
-							platform={elt.platform}
-							genre={elt.genre}
-						/>
-					);
-
-				})}
-			</section>
+			{gamesResult}
 		</main>
 	);
 };

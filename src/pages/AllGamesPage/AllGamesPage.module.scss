@@ -3,6 +3,7 @@
         margin: 1.5rem 3rem 0 3rem;
     }
 
+    min-height: 120vh;
     .gridList {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(50px, 290px));
@@ -14,4 +15,7 @@
     }
 
 
+    .oops {
+        // TODO: Add Styling for the case of no games being found
+    }
 }
