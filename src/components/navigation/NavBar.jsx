@@ -13,7 +13,7 @@ import { ClickAwayListener } from "@mui/base";
 const NavBar = () => {
 	const [isNavBarOpen, setIsNavBarOpen] = useState(false);
 	const location = useLocation();
-	console.log(location.pathname === "/");
+	// console.log(location.pathname === "/");
 
 	const isActiveStyle = {
 		background: "rgba(255, 155, 155, 0.1)",
