@@ -11,7 +11,7 @@ const TopGamesBrowserList = () => {
         fetch(`https://www.freetogame.com/api/games?platform=browser&sort-by=release-date`)
             .then(res => res.json())
             .then(data => {
-                console.log(data.slice(0, 4))
+                // console.log(data.slice(0, 4))
                 setRecentListData(data.slice(0, 4))
             })
     }, [])
