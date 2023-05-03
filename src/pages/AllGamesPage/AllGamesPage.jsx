@@ -124,7 +124,7 @@ const AllGamesPage = () => {
 			<GenericDropdown title={"PLATFORM"} options={platformOptions} onOptionChange={handleOptionChange} optionType={"platform"} />
 			<GenericDropdown title={"GENRE / TAG"} options={genreOptions} onOptionChange={handleOptionChange} optionType={"genre"} />
 			<GenericDropdown title={"SORT BY"} options={sortOptions} onOptionChange={handleOptionChange} optionType={"sort"} />
-			<section style={style.tagList}>
+			<section className={style.tagList}>
 				{genreOptions.map((item, index) => {
 					if (item.state) {
 						return (
@@ -142,7 +142,7 @@ const AllGamesPage = () => {
 			</section>
 			<section className={style.gridList}>
 				{filteredGames.map((elt) => {
-					if(!elt.title.toLowerCase().includes(searchText)){
+					if (!elt.title.toLowerCase().includes(searchText)) {
 						return;
 					}
 					return (

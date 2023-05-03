@@ -1,4 +1,8 @@
 .allGamesPage {
+    .tagList {
+        margin: 1.5rem 3rem 0 3rem;
+    }
+
     .gridList {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(50px, 290px));
@@ -6,6 +10,8 @@
         justify-content: space-between;
         gap: 1rem;
         row-gap: 2rem;
-        padding-top: 6rem;
+        padding-top: 3rem;
     }
+
+
 }
