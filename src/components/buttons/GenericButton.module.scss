@@ -17,6 +17,7 @@ button {
 		color: $button_hovered_foreground_color;
 		background: $button_hovered_background_color;
 		outline: 2px solid $button_hovered_outline_color;
+		cursor: pointer;
 	}
 
 	&:active {
