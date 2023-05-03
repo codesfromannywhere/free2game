@@ -1,9 +1,33 @@
+@import "../data/vars";
 .filterTag {
-	display: flex;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
 
-	padding: 0.2rem 0.3rem;
+	color: $button_normal_foreground_color;
+	background: $button_normal_background_color;
+
+	outline: 2px solid transparent;
+
+	border: 2px solid $button_normal_border_color;
+	border-radius: 999px;
+	padding: 0.25rem 0.85rem;
+
+	transition-duration: 200ms;
+	transition-property: outline-color, background-color;
 
 	p {
 		font-size: 0.75rem;
+	}
+
+	button {
+		filter: invert(100%);
+		width: 20px;
+		height: 20px;
+		img {
+			aspect-ratio: 1/1;
+			width: 100%;
+		}
 	}
 }

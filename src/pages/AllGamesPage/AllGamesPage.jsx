@@ -6,6 +6,7 @@ import GenericDropdown from "../../components/buttons/GenericDropdown.jsx";
 import GameItem_EX from '../../components/experimental/GameItem_EX';
 import HeroSection from '../../components/HeroSection';
 import { platforms, sorting, tags } from "../../data/tagData.jsx";
+import FilterTag from "../../components/FilterTag.jsx";
 
 const AllGamesPage = () => {
 
@@ -104,19 +105,15 @@ const AllGamesPage = () => {
 			fetch(url)
 				.then((res) => res.json())
 				.then((data) => {
-					if (searchText === '') {
-						setFilteredGames(data);
-					} else {
-						setFilteredGames(data.filter((a) => a.title.includes(searchText)));
-					}
+					setFilteredGames(data);
 				});
 		} else {
 			setFilteredGames(allGames.filter((a) => {
 				const platformMatch = platformOptionsRef.current.some(item => item.state === true && a.platform === item.text);
 				const genreMatch = genreOptionsRef.current.some(item => item.state === true && a.genre.toLowerCase() === item.text);
 
-				if (searchText === '' && !platformMatch && !genreMatch) return true
-				else { return a.title.includes(searchText) && (platformMatch || genreMatch) }
+				if (!platformMatch && !genreMatch) return true
+				else { return platformMatch || genreMatch }
 			}));
 		}
 	}, [allGames, platformStates, sortStates, genreStates, searchText]);
@@ -127,8 +124,27 @@ const AllGamesPage = () => {
 			<GenericDropdown title={"PLATFORM"} options={platformOptions} onOptionChange={handleOptionChange} optionType={"platform"} />
 			<GenericDropdown title={"GENRE / TAG"} options={genreOptions} onOptionChange={handleOptionChange} optionType={"genre"} />
 			<GenericDropdown title={"SORT BY"} options={sortOptions} onOptionChange={handleOptionChange} optionType={"sort"} />
+			<section style={style.tagList}>
+				{genreOptions.map((item, index) => {
+					if (item.state) {
+						return (
+							<FilterTag
+								key={item.text + index}
+								text={item.text}
+								isRemoveable={true}
+								onOptionChange={handleOptionChange}
+								optionType={"genre"}
+								optionIndex={index}
+							/>
+						);
+					}
+				})}
+			</section>
 			<section className={style.gridList}>
 				{filteredGames.map((elt) => {
+					if(!elt.title.toLowerCase().includes(searchText)){
+						return;
+					}
 					return (
 						<GameItem_EX
 							key={elt.id}
