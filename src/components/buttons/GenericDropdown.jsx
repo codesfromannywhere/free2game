@@ -39,21 +39,24 @@ const GenericDropdown = ({
 					<input type="text" id={"genre-search"} onChange={(event) => {
 						setGenreSearch(event.target.value);
 					}}/>
-					{options.filter(item => item.text.includes(genreSearch)).map((item, index) => {
-						return (
-							<label htmlFor={item.text} key={item.text + index}>
-								<input
-									type={singleOptionOnly ? "radio" : "checkbox"}
-									name={title}
-									id={item.text}
-									checked={item.state}
-									onChange={(event) => {
-										onOptionChange(index, event.target.checked, optionType);
-									}}
-								/>
-								{item.text}
-							</label>
-						);
+					{options.map((item, index) => {
+						if(item.text.includes(genreSearch)){
+							return (
+								<label htmlFor={item.text} key={item.text + index}>
+									<input
+										type={singleOptionOnly ? "radio" : "checkbox"}
+										name={title}
+										id={item.text}
+										checked={item.state}
+										onChange={(event) => {
+											onOptionChange(index, event.target.checked, optionType);
+										}}
+									/>
+									{item.text}
+								</label>
+							);
+						}
+						return null;
 					})}
 				</div>
 			</div>
