@@ -1,27 +1,40 @@
 .allGamesPage {
 
+    .content {
+        padding: 1rem 3rem;
 
-    .tagList {
-        margin: 1.5rem 6rem 0 6rem;
-    }
+        header {
+            display: flex;
+            padding: 2rem 0;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
 
-    min-height: 120vh;
+        .tagList {
+            margin: 1.5rem 6rem 0 6rem;
+        }
 
-    .gridList {
-        // display: grid;
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 6rem;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 350px));
-        justify-content: space-between;
-        gap: 1rem;
-        row-gap: 2rem;
-        padding-top: 3rem;
-    }
+        min-height: 120vh;
+
+        .gridList {
+            // display: grid;
+            display: flex;
+            flex-wrap: wrap;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 350px));
+            justify-content: space-between;
+            align-items: center;
+            gap: 3rem 2rem;
+
+            &>* {
+                margin: 0 auto;
+            }
+        }
 
 
-    .oops {
-        // TODO: Add Styling for the case of no games being found
-        color: red;
+        .oops {
+            // TODO: Add Styling for the case of no games being found
+        }
     }
 }

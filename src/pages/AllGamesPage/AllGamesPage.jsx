@@ -163,26 +163,30 @@ const AllGamesPage = () => {
 	return (
 		<main className={style.allGamesPage}>
 			<HeroSection title="ALL GAMES" backgroundImage={"https://www.freetogame.com/g/137/Metal-War-Online-3.jpg"} />
-			<GenericDropdown title={"PLATFORM"} options={platformOptions} onOptionChange={handleOptionChange} optionType={"platform"} />
-			<GenericDropdown title={"GENRE / TAG"} options={genreOptions} onOptionChange={handleOptionChange} optionType={"genre"} />
-			<GenericDropdown title={"SORT BY"} options={sortOptions} onOptionChange={handleOptionChange} optionType={"sort"} />
-			<section className={style.tagList}>
-				{genreOptions.map((item, index) => {
-					if (item.state) {
-						return (
-							<FilterTag
-								key={item.text + index}
-								text={item.text}
-								isRemoveable={true}
-								onOptionChange={handleOptionChange}
-								optionType={"genre"}
-								optionIndex={index}
-							/>
-						);
-					}
-				})}
+			<section className={style.content}>
+				<header>
+					<GenericDropdown title={"PLATFORM"} options={platformOptions} onOptionChange={handleOptionChange} optionType={"platform"} />
+					<GenericDropdown title={"GENRE / TAG"} options={genreOptions} onOptionChange={handleOptionChange} optionType={"genre"} />
+					<GenericDropdown title={"SORT BY"} options={sortOptions} onOptionChange={handleOptionChange} optionType={"sort"} />
+				</header>
+				<div className={style.tagList}>
+					{genreOptions.map((item, index) => {
+						if (item.state) {
+							return (
+								<FilterTag
+									key={item.text + index}
+									text={item.text}
+									isRemoveable={true}
+									onOptionChange={handleOptionChange}
+									optionType={"genre"}
+									optionIndex={index}
+								/>
+							);
+						}
+					})}
+				</div>
+				{gamesResult}
 			</section>
-			{gamesResult}
 		</main>
 	);
 };
