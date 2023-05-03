@@ -10,6 +10,10 @@ import HeroSection from '../../components/HeroSection';
 
 // _______________________________________________________________________
 
+
+// TO-DO :  - Verlinkung der Read-More Buttons
+// 			- Finish Responsive Design
+
 const GameDetailsPage = () => {
 
 	const params = useParams();
@@ -46,8 +50,6 @@ const GameDetailsPage = () => {
 
 	console.log(gameDetails);
 
-
-
 	// adjust fetch to get for every games the specific details
 	// useEffect(() => {
 	// 	if (gameDetails.screenshots[0].image === "loading") {
@@ -60,29 +62,11 @@ const GameDetailsPage = () => {
 	// 	}
 	// }, [gameDetails.screenshots]);
 
-
-	// 	return gameDetails.short_description
-	// } if (gameDetails.screenshots === null) {
-	// 	return null
-	// } if (gameDetails.minimum_system_requirements === null) {
-	// 	return null
-	// } else
-
-	// function fixMissingDetails() {
-	// 	if (gameDetails.screenshots.length === 0) {
-	// 		return null;
-	// 	} else if (gameDetails.minimum_system_requirements === null) {
-	// 		return null
-	// 	} else if (gameDetails.description === null) {
-	// 		return gameDetails.short_description
-	// 	}
-	// }
-	// fixMissingDetails();
-
-	// console.log(gameDetails.minimum_system_requirements)
+	// useEffect(() => {
+	// 	window.scrollTo(0, 0)
+	// }, []);
 
 	// Format the Release Date (from 20??-??-?? to Month ??, 20??)__________________
-
 	const dateString = gameDetails.release_date;
 	const dateObj = new Date(dateString);
 
@@ -101,7 +85,7 @@ const GameDetailsPage = () => {
 	return (
 		<main className={style.gameDetailsPage}>
 			<section className={style.heroSection}>
-				<HeroSection backgroundImage={gameDetails.screenshots[0].image} />
+				<HeroSection backgroundImage={gameDetails.screenshots[0]?.image} />
 			</section>
 			<h2>{gameDetails.title.toUpperCase()}</h2>
 			<article className={style.article}>
@@ -117,8 +101,8 @@ const GameDetailsPage = () => {
 				</div>
 			</article>
 			<section className={style.screenshot_section}>
-				<img src={gameDetails.screenshots[1].image} alt="Screenshot 2" />
-				<img src={gameDetails.screenshots[2].image} alt="Screenshot 3" />
+				<img src={gameDetails.screenshots[1]?.image} alt="Screenshot 2" />
+				<img src={gameDetails.screenshots[2]?.image} alt="Screenshot 3" />
 			</section>
 			<article className={style.main_article_system}>
 				<article className={style.information}>
@@ -142,17 +126,17 @@ const GameDetailsPage = () => {
 					<div className={style.system_block_div}>
 						<div className={style.os_memory_storage}>
 							<h3>OS</h3>
-							<p>{gameDetails.minimum_system_requirements.os}</p>
+							<p>{gameDetails.minimum_system_requirements?.os}</p>
 							<h3>Memory</h3>
-							<p>{gameDetails.minimum_system_requirements.memory}</p>
+							<p>{gameDetails.minimum_system_requirements?.memory}</p>
 							<h3>Storage</h3>
-							<p>{gameDetails.minimum_system_requirements.storage}</p>
+							<p>{gameDetails.minimum_system_requirements?.storage}</p>
 						</div>
 						<div className={style.processor_graphics_notes}>
 							<h3>Processor</h3>
-							<p>{gameDetails.minimum_system_requirements.processor}</p>
+							<p>{gameDetails.minimum_system_requirements?.processor}</p>
 							<h3>Graphics</h3>
-							<p>{gameDetails.minimum_system_requirements.graphics}</p>
+							<p>{gameDetails.minimum_system_requirements?.graphics}</p>
 							<h3>Additional Notes</h3>
 							<p>Specifications may change during development</p>
 						</div>
