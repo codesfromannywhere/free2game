@@ -2,10 +2,10 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import style from './GameDetailsPage.module.scss';
 import { useParams } from 'react-router-dom';
+import FilterTag from "../../components/common/FilterTag.jsx";
 
 // import Components
 import GenericLink from '../../components/common/GenericLink';
-import GenericButton from '../../components/common/GenericButton';
 import HeroSection from '../../components/layout/HeroSection.jsx';
 
 // _______________________________________________________________________
