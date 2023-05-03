@@ -38,6 +38,9 @@ const GenericDropdown = ({
 				<div style={{ display: isExpanded ? "flex" : "none" }} className={style.options}>
 					<input type="text" id={"genre-search"} onChange={(event) => {
 						setGenreSearch(event.target.value);
+					}}
+					onBlur={(event) => {
+						event.target.value = "";
 					}}/>
 					{options.map((item, index) => {
 						if(item.text.includes(genreSearch)){
