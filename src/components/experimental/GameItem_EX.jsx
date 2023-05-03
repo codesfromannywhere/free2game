@@ -13,7 +13,9 @@ const GameItem_EX = (props) => {
             <article className={style.gameCardContent}>
                 <h3>{props.title}</h3>
                 {description}
-                <GenericLink to={`/game/${props.id}`} className={style.buttonReadMore}>READ MORE</GenericLink>
+                <GenericLink onClick={() => {
+                    window.scroll(0, 0);
+                }} to={`/game/${props.id}`} className={style.buttonReadMore}>READ MORE</GenericLink>
                 <div className={style.bottomLine}></div>
             </article>
             <article className={style.filterTagContent}>
