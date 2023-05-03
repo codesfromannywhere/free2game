@@ -1,13 +1,18 @@
 .allGamesPage {
+
+
     .tagList {
-        margin: 1.5rem 3rem 0 3rem;
+        margin: 1.5rem 6rem 0 6rem;
     }
 
     min-height: 120vh;
+
     .gridList {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(50px, 290px));
-        margin: 0 3rem;
+        // display: grid;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 6rem;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 350px));
         justify-content: space-between;
         gap: 1rem;
         row-gap: 2rem;
