@@ -84,9 +84,11 @@ const GameDetailsPage = () => {
 
 	return (
 		<main className={style.gameDetailsPage}>
-			<section className={style.heroSection}>
-				<HeroSection backgroundImage={gameDetails.screenshots[0]?.image} />
-			</section>
+			{gameDetails.screenshots[0]?.image && (
+				<section className={style.heroSection}>
+					<HeroSection backgroundImage={gameDetails.screenshots[0]?.image} />
+				</section>
+			)}
 			<h2>{gameDetails.title.toUpperCase()}</h2>
 			<article className={style.article}>
 				<div className={style.thumbnail_button_article}>
@@ -100,10 +102,12 @@ const GameDetailsPage = () => {
 					<p>{gameDetails.description}</p>
 				</div>
 			</article>
-			<section className={style.screenshot_section}>
-				<img src={gameDetails.screenshots[1]?.image} alt="Screenshot 2" />
-				<img src={gameDetails.screenshots[2]?.image} alt="Screenshot 3" />
-			</section>
+			{gameDetails.screenshots[0]?.image && (
+				<section className={style.screenshot_section}>
+					<img src={gameDetails.screenshots[1]?.image} alt="Screenshot 2" />
+					<img src={gameDetails.screenshots[2]?.image} alt="Screenshot 3" />
+				</section>
+			)}
 			<article className={style.main_article_system}>
 				<article className={style.information}>
 					<h3 className={style.headline}>Additional Information</h3>
