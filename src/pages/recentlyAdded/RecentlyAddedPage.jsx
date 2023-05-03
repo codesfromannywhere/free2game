@@ -28,6 +28,7 @@ const RecentlyAddedPage = () => {
 				{recentlyAdded.map((game) => (
 					<GameItem_EX
 						key={game.id}
+						id={game.id}
 						img={game.thumbnail}
 						title={game.title}
 						platform={game.platform}
