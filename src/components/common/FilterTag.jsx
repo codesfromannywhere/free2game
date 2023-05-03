@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './FilterTag.module.scss';
-import GenericButton from "./buttons/GenericButton.jsx";
-import closeIcon from "../assets/images/icon_close.svg";
+import GenericButton from "./GenericButton.jsx";
+import closeIcon from "../../assets/images/icon_close.svg";
 
 const FilterTag = ({
 					   img,

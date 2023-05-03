@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import style from "../home/TopGamesPCList.module.scss"
+import style from ".//TopGamesPCList.module.scss"
 import windowsIcon from "../../assets/images/icon_windows.svg"
-import GenericLink from "../buttons/GenericLink.jsx";
-import FilterTag from "../FilterTag";
+import GenericLink from "../common/GenericLink.jsx";
+import FilterTag from "../common/FilterTag.jsx";
 
 
 

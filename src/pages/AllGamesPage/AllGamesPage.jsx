@@ -2,11 +2,11 @@ import React, { useCallback, useContext, useEffect, useMemo, useRef, useState } 
 import style from './AllGamesPage.module.scss';
 
 import { SearchTextContext } from '../../components/layout/Layout.jsx';
-import GenericDropdown from "../../components/buttons/GenericDropdown.jsx";
-import GameItem_EX from '../../components/experimental/GameItem_EX';
-import HeroSection from '../../components/HeroSection';
+import GenericDropdown from "../../components/common/GenericDropdown.jsx";
+import GameItem from '../../components/ListItems/GameItem.jsx';
+import HeroSection from '../../components/layout/HeroSection.jsx';
 import { platforms, sorting, tags } from "../../data/tagData.jsx";
-import FilterTag from "../../components/FilterTag.jsx";
+import FilterTag from "../../components/common/FilterTag.jsx";
 
 const AllGamesPage = () => {
 
@@ -132,7 +132,7 @@ const AllGamesPage = () => {
 							return;
 						}
 						return (
-							<GameItem_EX
+							<GameItem
 								key={elt.id}
 								id={elt.id}
 								img={elt.thumbnail}

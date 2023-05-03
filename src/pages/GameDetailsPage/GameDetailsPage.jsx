@@ -4,9 +4,9 @@ import style from './GameDetailsPage.module.scss';
 import { useParams } from 'react-router-dom';
 
 // import Components
-import GenericLink from '../../components/buttons/GenericLink';
-import HeroSection from '../../components/HeroSection';
-import FilterTag from '../../components/FilterTag';
+import GenericLink from '../../components/common/GenericLink';
+import GenericButton from '../../components/common/GenericButton';
+import HeroSection from '../../components/layout/HeroSection.jsx';
 
 // _______________________________________________________________________
 

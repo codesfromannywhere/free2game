@@ -1,10 +1,10 @@
 import windowsIcon from "../../assets/images/icon_windows.svg"
 import BrowserIcon from "../../assets/images/icon_browser.svg"
-import GenericLink from "../buttons/GenericLink.jsx";
-import style from "../experimental/GameItem_EX.module.scss";
-import FilterTag from "../FilterTag";
+import GenericLink from "../common/GenericLink.jsx";
+import style from "./GameItem.module.scss";
+import FilterTag from "../common/FilterTag.jsx";
 
-const GameItem_EX = (props) => {
+const GameItem = (props) => {
     const description = props.description ? (<p>{props.description}</p>) : "";
 
     return (
@@ -26,4 +26,4 @@ const GameItem_EX = (props) => {
     );
 }
 
-export default GameItem_EX;
+export default GameItem;
