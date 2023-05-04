@@ -21,7 +21,7 @@
 	// __________ Hero-Section _________________________________________
 
 	.heroSection {
-		min-width: 80%;
+		min-width: 40%;
 		max-width: 100%;
 		background-size: cover;
 		height: auto;
@@ -35,7 +35,7 @@
 	}
 
 	.thumbnail_button_article {
-		width: 54.5rem;
+		max-width: 54.5rem;
 		margin-left: 5rem;
 
 		img {
@@ -67,15 +67,14 @@
 			border-radius: 0.75rem;
 			font-size: 1.125rem;
 			font-weight: 700;
-			width: 8rem;
+			max-width: 8rem;
 		}
 	}
 
 	// ---------------------
 
 	.about_text_div {
-		width: 70rem;
-		padding-right: 27rem;
+		max-width: 30rem;
 
 		h3 {
 			margin-bottom: 2.25rem;
@@ -96,7 +95,7 @@
 		margin-left: 5rem;
 
 		img {
-			max-width: 50rem;
+			max-width: 32rem;
 		}
 	}
 
@@ -104,12 +103,12 @@
 
 	.main_article_system {
 		display: flex;
-		gap: 20rem;
+		gap: clamp(2rem, 5%, 20rem);
 
 		// ----- Additional Information-----------
 
 		.information {
-			width: 42rem;
+			max-width: 42rem;
 			padding-left: 7rem;
 
 			h3:nth-of-type(1) {
