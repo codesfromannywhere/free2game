@@ -84,7 +84,7 @@ const AllGamesPage = () => {
 		fetch(url)
 			.then((res) => res.json())
 			.then((data) => {
-				setAllGames(data);
+				setAllGames(data.slice(0, 100));
 			});
 	}, []);
 
@@ -96,7 +96,7 @@ const AllGamesPage = () => {
 			let sort = sortOptions.find(item => item.state)?.text;
 
 			let gamesUrl = `https://www.freetogame.com/api/games?platform=${platform}&sort-by=${sort}`;
-			let filterUrl = `https://www.freetogame.com/api/filter?tag=${selectedGenres.join(".")}&platform=${platform}&sort=${sort}`;
+			let filterUrl = `https://www.freetogame.com/api/filter?tag=${selectedGenres.join(".")}&platform=${platform}&sort-by=${sort}`;
 
 			let url = selectedGenres.length > 0 ? filterUrl : gamesUrl;
 
@@ -105,7 +105,8 @@ const AllGamesPage = () => {
 			fetch(url)
 				.then((res) => res.json())
 				.then((data) => {
-					setFilteredGames(data);
+					setFilteredGames(data.slice(0, 100));
+					console.log("fetched:", url);
 				});
 		} else {
 			setFilteredGames(allGames.filter((a) => {

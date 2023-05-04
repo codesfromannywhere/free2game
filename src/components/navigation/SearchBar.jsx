@@ -11,7 +11,10 @@ const SearchBar = () => {
 	const location = useLocation();
 	return (
 		<article className={style.searchBar}>
-			<input type="text" onChange={(event) => {
+			<input
+				type="text"
+				value={searchTextState[0]}
+				onChange={(event) => {
 
 				searchTextState[1](event.target.value);
 				if(location.pathname !== "/all-games"){navigate("/all-games")}

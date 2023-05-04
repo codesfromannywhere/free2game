@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 export const SearchTextContext = createContext([]);
 const Layout = ({ children }) => {
 	const [searchText, setSearchText] = useState("");
+
+
 	return (
 		<SearchTextContext.Provider value={[searchText.toLowerCase(), setSearchText]}>
 			<div className={style.layout}>
