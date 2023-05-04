@@ -2,8 +2,8 @@ import React from 'react';
 import style from './RecentlyAddedPage.module.scss';
 import { useState, useEffect } from 'react';
 
-import GameItem_EX from '../../components/experimental/GameItem_EX';
-import HeroSection from '../../components/HeroSection';
+import GameItem from '../../components/ListItems/GameItem.jsx';
+import HeroSection from '../../components/layout/HeroSection.jsx';
 
 
 const RecentlyAddedPage = () => {
@@ -26,7 +26,7 @@ const RecentlyAddedPage = () => {
 			<HeroSection title="RECENTLY ADDED" backgroundImage={"https://www.freetogame.com/g/222/MechWarrior-Online-3.jpg"} />
 			<section className={style.gridList}>
 				{recentlyAdded.map((game) => (
-					<GameItem_EX
+					<GameItem
 						key={game.id}
 						id={game.id}
 						img={game.thumbnail}

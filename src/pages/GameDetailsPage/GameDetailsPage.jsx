@@ -2,11 +2,11 @@ import React from 'react';
 import style from './GameDetailsPage.module.scss';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import FilterTag from "../../components/common/FilterTag.jsx";
 
 // import Components
-import GenericLink from '../../components/buttons/GenericLink';
-import HeroSection from '../../components/HeroSection';
-import FilterTag from '../../components/FilterTag';
+import GenericLink from '../../components/common/GenericLink';
+import HeroSection from '../../components/layout/HeroSection.jsx';
 
 // _______________________________________________________________________
 

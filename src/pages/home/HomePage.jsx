@@ -1,10 +1,10 @@
 import React from 'react';
 import style from './HomePage.module.scss'
-import HomeRecentList from '../../components/home/HomeRecentList'
-import TopGamesBrowserList from '../../components/home/TopGamesBrowserList'
-import TopGamesPCList from '../../components/home/TopGamesPCList'
-import HeroSection from '../../components/HeroSection'
-import GenericLink from "../../components/buttons/GenericLink";
+import HomeRecentList from '../../components/lists/HomeRecentList'
+import TopGamesBrowserList from '../../components/lists/TopGamesBrowserList'
+import TopGamesPCList from '../../components/lists/TopGamesPCList'
+import HeroSection from '../../components/layout/HeroSection.jsx'
+import GenericLink from "../../components/common/GenericLink";
 
 
 

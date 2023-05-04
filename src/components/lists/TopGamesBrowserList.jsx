@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import GameItem_EX from '../experimental/GameItem_EX'
-import style from "../home/HomeListGrid.module.scss";
+import GameItem from '../ListItems/GameItem.jsx'
+import style from "./HomeRecentList.module.scss";
 
 
 const TopGamesBrowserList = () => {
@@ -22,7 +22,7 @@ const TopGamesBrowserList = () => {
                 {recentListData.map((game, i) => {
                     // console.log(game.title)
                     return (
-                        <GameItem_EX
+                        <GameItem
                             img={game.thumbnail}
                             title={game.title}
                             platform={game.platform}

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './NavButton.module.scss'
-import GenericLink from "../buttons/GenericLink.jsx";
+import GenericLink from "./GenericLink.jsx";
 
 const NavButton = ({icon, iconDescription, buttonText, to, style, onClick, ...props}) => {
 	return (

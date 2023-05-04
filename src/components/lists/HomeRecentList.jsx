@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import GameItemDescription from "./GameItemDescription";
-import GameItem_EX from '../experimental/GameItem_EX'
-import style from "../home/HomeListGrid.module.scss";
+import GameItem from '../ListItems/GameItem.jsx'
+import style from "./HomeRecentList.module.scss";
 
 
 
@@ -13,7 +12,6 @@ const HomeRecentList = () => {
         fetch(`https://www.freetogame.com/api/games?&sort-by=release-date?&platform=all`)
             .then(res => res.json())
             .then(data => {
-                // console.log(data.slice(0, 4))
                 setRecentListData(data.slice(0, 4))
             })
     }, [])
@@ -25,7 +23,7 @@ const HomeRecentList = () => {
                 {recentListData.map((game, i) => {
                     // console.log(game.title)
                     return (
-                        <GameItem_EX
+                        <GameItem
                             img={game.thumbnail}
                             title={game.title}
                             description={game.short_description}
