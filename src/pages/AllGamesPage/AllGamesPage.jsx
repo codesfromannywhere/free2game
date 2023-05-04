@@ -78,7 +78,7 @@ const AllGamesPage = () => {
 		}
 	}, []);
 
-	const requestLimit = 200;
+	const requestLimit = 100;
 
 	useEffect(() => {
 		let url = 'https://www.freetogame.com/api/games';
@@ -105,10 +105,10 @@ const AllGamesPage = () => {
 		fetch(url)
 			.then((res) => res.json())
 			.then((data) => {
-				let tmp = data.filter(current => {
+				let tmp = data.length > 0 ? data.filter(current => {
 					console.log(current);
 					return current.title.toLowerCase().includes(searchText);
-				})
+				}) : data;
 				if(tmp.length > requestLimit){
 					tmp = data.slice(0, requestLimit);
 				}
