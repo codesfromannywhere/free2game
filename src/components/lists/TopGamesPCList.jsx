@@ -20,7 +20,7 @@ const TopGamesPCList = () => {
                 fetch(`https://www.freetogame.com/api/game?id=${data[0].id}`)
                     .then(res => res.json())
                     .then(data => {
-                        if (data || data.screenshots || data.screenshots.length <= 0) {
+                        if (!data || !data.screenshots || data.screenshots.length <= 0) {
                             return;
                         }
                         setLargeImage(data.screenshots[Math.floor(Math.random() * data.screenshots.length)].image);
