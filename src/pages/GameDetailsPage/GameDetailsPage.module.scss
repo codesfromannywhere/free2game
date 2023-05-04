@@ -21,20 +21,21 @@
 	// __________ Hero-Section _________________________________________
 
 	.heroSection {
+		min-width: 80%;
 		max-width: 100%;
 		background-size: cover;
 		height: auto;
-
 	}
 
-	//___________ Article with Title & Thumbnail ______________________
+	//___________ Article with Title & Thumbnail _______________________
 
 	.article {
 		display: flex;
+		gap: 2rem;
 	}
 
 	.thumbnail_button_article {
-		width: 50%;
+		width: 54.5rem;
 		margin-left: 5rem;
 
 		img {
@@ -73,8 +74,8 @@
 	// ---------------------
 
 	.about_text_div {
-		width: 50%;
-		margin-right: 12.5rem;
+		width: 70rem;
+		padding-right: 27rem;
 
 		h3 {
 			margin-bottom: 2.25rem;
@@ -99,16 +100,17 @@
 		}
 	}
 
-	// _________________ Article - Information & Requirements _______________
+	// _________________ Article - Information & Requirements __________
 
 	.main_article_system {
 		display: flex;
+		gap: 20rem;
 
 		// ----- Additional Information-----------
 
 		.information {
 			width: 42rem;
-			padding-left: 8rem;
+			padding-left: 7rem;
 
 			h3:nth-of-type(1) {
 				margin: 6rem 0 2.25rem 0;
@@ -138,20 +140,23 @@
 					margin-bottom: 1.5rem;
 					line-height: 1.5rem;
 				}
+
+				p:nth-of-type(3) {
+					margin-bottom: 8rem;
+				}
 			}
 		}
 
 		// -------- System Requirements Block -----------
 
 		.requirements_article {
-			padding-left: 20rem;
 
 			.headline {
 				font-size: 1.5rem;
 			}
 
 			h3 {
-				font-size: 1.2rem;
+				font-size: 1.1rem;
 			}
 
 			p {
@@ -164,10 +169,11 @@
 
 			.system_block_div {
 				display: flex;
-				justify-content: flex-start;
 				gap: 4rem;
 
 				.os_memory_storage {
+
+					width: 20rem;
 
 					h3:nth-of-type(1) {
 						margin-top: 2.25rem;
@@ -184,7 +190,8 @@
 
 				.processor_graphics_notes {
 
-					margin-right: 6rem;
+					// margin-right: 6rem;
+					width: 20rem;
 
 					h3 {
 						margin: 1.5rem 0 0.75rem 0;
@@ -192,7 +199,6 @@
 
 					h3:nth-of-type(1) {
 						margin: 2.25rem 0 0.75rem;
-
 					}
 
 					h3:nth-of-type(3) {
@@ -205,110 +211,6 @@
 
 					p:nth-of-type(3) {
 						margin-bottom: 9rem;
-					}
-				}
-			}
-		}
-	}
-}
-
-// Media Queries __ 600px/33rem _______________________
-
-@media only screen and (max-width: 33rem) {
-
-	.gameDetailsPage {
-
-		.heroSection {
-			width: 100%;
-		}
-
-		.article {
-			display: inline-block;
-
-			.thumbnail_button_article {
-				width: 50%;
-
-				img {
-					width: 55rem;
-				}
-
-				h3 {
-					font-size: 2rem;
-				}
-
-				.Game_tag {
-					margin: 1rem 0 2rem 2rem;
-					font-size: 1.2rem;
-				}
-
-				.Link_playnow {
-					margin: 0 0 7rem 2rem;
-					font-size: 1.125rem;
-					width: 10rem;
-				}
-
-				.about_text_div {
-					padding-left: 5rem;
-
-					h3 {
-						margin-bottom: 2.25rem;
-						font-size: 1.5rem;
-					}
-
-					p {
-						margin-bottom: 4rem;
-					}
-				}
-
-				.screenshot_section {
-					flex-direction: column;
-					gap: 3rem;
-
-					img:nth-of-type(1) {
-						width: 55rem;
-					}
-
-					img:nth-of-type(2) {
-						width: 55rem;
-					}
-				}
-
-				.main_article_system {
-					display: block;
-					padding-left: 5rem;
-
-					.information {
-						width: 42rem;
-
-						h3:nth-of-type(1) {
-							margin: 6rem 0 2.25rem 0;
-						}
-
-						.headline {
-							font-size: 1.5rem;
-						}
-
-						.developer_block {
-							margin-top: 1.5rem;
-							display: flex;
-							justify-content: flex-start;
-							gap: 2rem;
-
-							h3 {
-								margin-bottom: 1.7rem;
-								line-height: 1.35rem;
-								font-size: 1rem;
-							}
-
-							h3:nth-of-type(1) {
-								margin-top: 0;
-							}
-
-							p {
-								margin-bottom: 1.5rem;
-								line-height: 1.5rem;
-							}
-						}
 					}
 				}
 			}

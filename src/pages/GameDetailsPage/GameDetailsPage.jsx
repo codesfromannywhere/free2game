@@ -1,6 +1,6 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 import style from './GameDetailsPage.module.scss';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 // import Components
@@ -9,10 +9,6 @@ import HeroSection from '../../components/HeroSection';
 import FilterTag from '../../components/FilterTag';
 
 // _______________________________________________________________________
-
-
-// TO-DO :  - Verlinkung der Read-More Buttons
-// 			- Finish Responsive Design
 
 const GameDetailsPage = () => {
 
@@ -44,28 +40,9 @@ const GameDetailsPage = () => {
 		fetch(`https://www.freetogame.com/api/game?id=${gameId}`)
 			.then(res => res.json())
 			.then(data => {
-				// console.log(data);
 				setGameDetails(data);
 			})
 	}, [gameId])
-
-	console.log(gameDetails);
-
-	// adjust fetch to get for every games the specific details
-	// useEffect(() => {
-	// 	if (gameDetails.screenshots[0].image === "loading") {
-	// 		fetch(`https://www.freetogame.com/api/games?id=${gameId}`)
-	// 			.then(res => res.json())
-	// 			.then(data => {
-	// 				// console.log(data);
-	// 				setGameDetails(data);
-	// 			});
-	// 	}
-	// }, [gameDetails.screenshots]);
-
-	// useEffect(() => {
-	// 	window.scrollTo(0, 0)
-	// }, []);
 
 	// Format the Release Date (from 20??-??-?? to Month ??, 20??)__________________
 	const dateString = gameDetails.release_date;
@@ -126,51 +103,32 @@ const GameDetailsPage = () => {
 						</div>
 					</div>
 				</article>
-				<article className={style.requirements_article}>
-					<h3 className={style.headline}>Minimum System Requirements</h3>
-					<div className={style.system_block_div}>
-						<div className={style.os_memory_storage}>
-							<h3>OS</h3>
-							<p>{gameDetails.minimum_system_requirements?.os}</p>
-							<h3>Memory</h3>
-							<p>{gameDetails.minimum_system_requirements?.memory}</p>
-							<h3>Storage</h3>
-							<p>{gameDetails.minimum_system_requirements?.storage}</p>
+				{gameDetails.minimum_system_requirements?.os && gameDetails.minimum_system_requirements?.processor && (
+					<article className={style.requirements_article}>
+						<h3 className={style.headline}>Minimum System Requirements</h3>
+						<div className={style.system_block_div}>
+							<div className={style.os_memory_storage}>
+								<h3>OS</h3>
+								<p>{gameDetails.minimum_system_requirements?.os}</p>
+								<h3>Memory</h3>
+								<p>{gameDetails.minimum_system_requirements?.memory}</p>
+								<h3>Storage</h3>
+								<p>{gameDetails.minimum_system_requirements?.storage}</p>
+							</div>
+							<div className={style.processor_graphics_notes}>
+								<h3>Processor</h3>
+								<p>{gameDetails.minimum_system_requirements?.processor}</p>
+								<h3>Graphics</h3>
+								<p>{gameDetails.minimum_system_requirements?.graphics}</p>
+								<h3>Additional Notes</h3>
+								<p>Specifications may change during development</p>
+							</div>
 						</div>
-						<div className={style.processor_graphics_notes}>
-							<h3>Processor</h3>
-							<p>{gameDetails.minimum_system_requirements?.processor}</p>
-							<h3>Graphics</h3>
-							<p>{gameDetails.minimum_system_requirements?.graphics}</p>
-							<h3>Additional Notes</h3>
-							<p>Specifications may change during development</p>
-						</div>
-					</div>
-				</article>
+					</article>
+				)}
 			</article>
 		</main>
 	);
 };
-
-
-// _____________________ Main Keys ________________________________
-// "id": 540,
-// "title": "Overwatch 2",
-// "thumbnail": "https://www.freetogame.com/g/540/thumbnail.jpg",
-// "short_description": "A hero-focused first-person team shooter from Blizzard Entertainment.",
-// "game_url": "https://www.freetogame.com/open/overwatch-2",
-// "genre": "Shooter",
-// "platform": "PC (Windows)",
-// "publisher": "Activision Blizzard",
-// "developer": "Blizzard Entertainment",
-// "release_date": "2022-10-04",
-// "freetogame_profile_url": "https://www.freetogame.com/overwatch-2"
-// },
-
-// _____________________Additional Keys_____________________________
-// "status": "Live",
-// "description": "Call of Duty: Warzone is both a standalone free-to-play battle royale and modes accessible via Call of Duty: Modern Warfare. Warzone features two modes — the general 150-player battle royle, and “Plunder”. The latter mode is described as a “race to deposit the most Cash”. In both modes players can both earn and loot cash to be used when purchasing in-match equipment, field upgrades, and more. Both cash and XP are earned in a variety of ways, including completing contracts.\r\n\r\nAn interesting feature of the game is one that allows players who have been killed in a match to rejoin it by winning a 1v1 match against other felled players in the Gulag.\r\n\r\nOf course, being a battle royale, the game does offer a battle pass. The pass offers players new weapons, playable characters, Call of Duty points, blueprints, and more. Players can also earn plenty of new items by completing objectives offered with the pass.",
-// "screenshots": []
-// "minimum_system_requirements": {}
 
 export default GameDetailsPage;
