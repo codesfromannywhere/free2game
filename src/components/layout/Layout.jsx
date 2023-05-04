@@ -25,6 +25,11 @@ const Layout = ({ children }) => {
 					<SearchBar />
 				</header>
 				{children}
+				<footer>
+					<p>
+						Made with Love ♥
+					</p>
+				</footer>
 			</div>
 		</SearchTextContext.Provider>
 	);
