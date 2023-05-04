@@ -78,6 +78,8 @@ const AllGamesPage = () => {
 		}
 	}, []);
 
+	const requestLimit = 200;
+
 	useEffect(() => {
 		let url = 'https://www.freetogame.com/api/games';
 
@@ -89,33 +91,32 @@ const AllGamesPage = () => {
 	}, []);
 
 	useEffect(() => {
-		const bUseFetch = true;
-		if (bUseFetch) {
-			let platform = platformOptionsRef.current.find(item => item.state === true)?.text || "all";
-			let selectedGenres = genreOptionsRef.current.filter(item => item.state === true).map(item => item.text);
-			let sort = sortOptions.find(item => item.state)?.text;
+		let platform = platformOptionsRef.current.find(item => item.state === true)?.text || "all";
+		let selectedGenres = genreOptionsRef.current.filter(item => item.state === true).map(item => item.text);
+		let sort = sortOptions.find(item => item.state)?.text;
 
-			let gamesUrl = `https://www.freetogame.com/api/games?platform=${platform}&sort-by=${sort}`;
-			let filterUrl = `https://www.freetogame.com/api/filter?tag=${selectedGenres.join(".")}&platform=${platform}&sort=${sort}`;
+		let gamesUrl = `https://www.freetogame.com/api/games?platform=${platform}&sort-by=${sort}`;
+		let filterUrl = `https://www.freetogame.com/api/filter?tag=${selectedGenres.join(".")}&platform=${platform}&sort-by=${sort}`;
 
-			let url = selectedGenres.length > 0 ? filterUrl : gamesUrl;
+		let url = selectedGenres.length > 0 ? filterUrl : gamesUrl;
 
-			console.log(sort);
+		console.log(sort);
 
-			fetch(url)
-				.then((res) => res.json())
-				.then((data) => {
-					setFilteredGames(data);
-				});
-		} else {
-			setFilteredGames(allGames.filter((a) => {
-				const platformMatch = platformOptionsRef.current.some(item => item.state === true && a.platform === item.text);
-				const genreMatch = genreOptionsRef.current.some(item => item.state === true && a.genre.toLowerCase() === item.text);
+		fetch(url)
+			.then((res) => res.json())
+			.then((data) => {
+				let tmp = data.filter(current => {
+					console.log(current);
+					return current.title.toLowerCase().includes(searchText);
+				})
+				if(tmp.length > requestLimit){
+					tmp = data.slice(0, requestLimit);
+				}
+				setFilteredGames((tmp));
+				console.log(filteredGames);
+				//setFilteredGames(data.length > 0 ? searchText === "" ? data.slice(0, requestLimit) : data : data);
+			});
 
-				if (!platformMatch && !genreMatch) return true
-				else { return platformMatch || genreMatch }
-			}));
-		}
 	}, [allGames, platformStates, sortStates, genreStates, searchText]);
 
 	const [gamesResult, setGamesResult] = useState();
@@ -128,9 +129,11 @@ const AllGamesPage = () => {
 			element = (
 				<section className={style.gridList}>
 					{filteredGames.map((elt) => {
+						/*
 						if (!elt.title.toLowerCase().includes(searchText)) {
 							return;
 						}
+						*/
 						return (
 							<GameItem
 								key={elt.id}

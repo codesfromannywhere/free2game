@@ -3,6 +3,7 @@ import style from ".//TopGamesPCList.module.scss"
 import windowsIcon from "../../assets/images/icon_windows.svg"
 import GenericLink from "../common/GenericLink.jsx";
 import FilterTag from "../common/FilterTag.jsx";
+import {months} from "../../data/timeDate.js";
 
 
 
@@ -13,7 +14,7 @@ const TopGamesPCList = () => {
     const [recentListData, setRecentListData] = useState([])
 
     useEffect(() => {
-        fetch(`https://www.freetogame.com/api/games?platform=pc&sort-by=release-date`)
+        fetch(`https://www.freetogame.com/api/games?platform=pc&sort-by=popularity`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data.slice(0, 4))
@@ -22,7 +23,7 @@ const TopGamesPCList = () => {
     }, [])
     return (
         <section className={style.gameCardSec}>
-            <h2>Top 4 Games for PC in January 2023</h2>
+            <h2>Top 4 Games for PC in {months[new Date().getMonth()]} {new Date().getFullYear()}</h2>
             <article className={style.PCGameCardContainer}>
 
                 <div className={style.Game1}>
