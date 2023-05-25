@@ -25,10 +25,10 @@ https://free2game-superdupercode.netlify.app/)](https://free2game-superdupercode
 
 ## 👥 Authors
 
-- <a href="https://github.com/TheAyes" target="_blank">Justin</a>
-- <a href="https://github.com/Jenseko" target="_blank">Jens</a>
+- <a href="https://github.com/TheAyes" target="_blank">TheAyes</a>
+- <a href="https://github.com/Jenseko" target="_blank">Jenseko</a>
 - <a href="https://github.com/codesfromannywhere" target="_blank">codesfromannywhere</a>
-- <a href="https://github.com/Maartala" target="_blank">Steffi</a>
+- <a href="https://github.com/Maartala" target="_blank">Maartala</a>
 
 
 📷 Project Screenshots:
